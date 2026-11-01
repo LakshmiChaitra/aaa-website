@@ -1,0 +1,65 @@
+/* The right-side reveal is the object itself; the approved directory is unchanged. */
+.contemporary .practice-panel[open]{background:transparent;border:0;box-shadow:none;border-radius:0;scrollbar-color:#bda681 transparent}
+.contemporary .practice-panel-bar{background:#f7f4edf2;border:0;padding:10px 14px;backdrop-filter:blur(8px)}
+#practice-content{padding:18px 20px 28px;overflow:hidden}
+#practice-content .sculpture-object{width:100%;max-width:none;--object-ink:#f9edd4;--object-muted:#e1cfb2;--object-line:#c2a06a66;--object-gold:#e2c185;filter:drop-shadow(0 12px 12px #4c321b15)}
+#practice-content .sculpture-surface{min-height:0;color:var(--object-ink);box-shadow:inset 2px 0 6px #ffdfa51c,inset -5px 0 10px #0c070424;border-color:#a98953}
+#practice-content .sculpture-copy{min-width:0}
+.contemporary #practice-content #practice-title{font:500 35px/1.05 var(--serif);color:var(--object-ink);letter-spacing:-.6px;margin:14px 0 18px;outline:none}
+#practice-content .sculpture-copy>.eyebrow{font:500 8px/1.7 var(--sans);color:var(--object-gold);letter-spacing:1.2px;margin:0}
+#practice-content .sculpture-description{font:400 12px/1.8 var(--sans);color:var(--object-muted)}
+#practice-content .sculpture-schedule{margin-top:22px;padding-top:16px;border-color:var(--object-line)}
+#practice-content .sculpture-schedule>span{font-size:8px;letter-spacing:1px;color:var(--object-gold)}
+#practice-content .sculpture-schedule>div{display:flex;flex-direction:column;gap:3px;padding:12px 0;font:400 12px/1.6 var(--sans);border-color:var(--object-line)}
+#practice-content .sculpture-schedule>div>span{color:var(--object-muted)}
+#practice-content .sculpture-schedule strong{color:var(--object-ink);text-align:left;font-weight:500}
+#practice-content .sculpture-note{font:400 11px/1.8 var(--sans);color:var(--object-muted);margin-top:16px}
+#practice-content .practice-enquire{background:#ecd7ad;color:#3b291c;border-color:#ddbe86;font-size:11px;padding:12px 13px;line-height:1.5;margin-top:22px;gap:10px}
+#practice-content .sculpture-copy>small{font:400 7px/1.7 var(--sans);color:var(--object-gold);letter-spacing:.8px;margin-top:18px}
+#practice-content .shape-mic{padding:0 15px 80px}
+#practice-content .shape-mic .sculpture-surface{border-radius:155px 155px 135px 135px;padding:72px 27px 62px;background:linear-gradient(90deg,#322319e8,#61462fee 48%,#2c2018ed),repeating-linear-gradient(0deg,#8d6c43 0 2px,transparent 2px 7px),repeating-linear-gradient(90deg,#a88755 0 2px,#39291c 2px 7px)}
+#practice-content .mic-cradle{left:0;right:0;bottom:62px;border-width:4px;border-color:#a98953;box-shadow:inset 2px 0 #e8cf9a}
+#practice-content .mic-stand{bottom:12px;height:52px;width:7px;left:calc(50% - 3.5px);background:linear-gradient(90deg,#805c34,#dfc38d,#745031)}
+#practice-content .mic-stand:after{height:8px;border-radius:50%;width:142px;left:-68px;background:linear-gradient(90deg,#805c34,#dfc38d,#745031)}
+#practice-content .shape-hand{margin-top:108px;padding-bottom:16px}
+#practice-content .hand-crown{top:-112px;height:140px}
+#practice-content .hand-crown img{filter:sepia(.7) saturate(.65)}
+#practice-content .shape-hand .sculpture-surface{padding:42px 30px 48px;border-radius:45px 52px 38px 38px;background:linear-gradient(110deg,#795136,#a57649 45%,#68452f)}
+#practice-content .shape-hand:after{background:#815a3c;border-color:#bb9860}
+#practice-content .shape-book,#practice-content .shape-palette{--object-ink:#493321;--object-muted:#6d5942;--object-gold:#806039;--object-line:#a3865966}
+#practice-content .shape-book{margin:14px 0 20px}
+#practice-content .shape-book .sculpture-surface{padding:42px 25px;background:linear-gradient(90deg,#e1cfab,#fff3d9 45%,#d1b98c 49.5%,#f9edce 51%,#e7d7b5);border-radius:22px 22px 3px 3px;box-shadow:0 5px #d3bc93,0 8px #927044}
+#practice-content .shape-palette{margin-top:8px}
+#practice-content .shape-palette .sculpture-surface{padding:80px 38px 65px;background:linear-gradient(120deg,#f4e7c8,#dcc399);border-radius:44% 47% 38% 34% / 16% 20% 24% 26%}
+#practice-content .shape-palette .sculpture-surface:after{top:8%;right:9%;width:22px;height:32px;background:#f7f4ed}
+#practice-content .palette-paints i{width:15px;height:14px;top:7%;left:19%}
+#practice-content .palette-paints i:nth-child(2){top:4%;left:32%}
+#practice-content .palette-paints i:nth-child(3){top:3%;left:45%}
+#practice-content .palette-paints i:nth-child(4){top:4%;left:58%}
+#practice-content .shape-book .practice-enquire,#practice-content .shape-palette .practice-enquire{background:#503826;color:#fff0d0;border-color:#503826}
+#practice-content .shape-mat{padding-left:22px;margin-top:12px}
+#practice-content .shape-mat .sculpture-surface{padding:38px 22px 40px 36px;border-radius:10px;background:repeating-linear-gradient(0deg,#535c45 0 5px,#5c654b 5px 6px)}
+#practice-content .mat-roll{left:0;width:42px;background:repeating-radial-gradient(ellipse at center,#667257 0 6px,#b7a575 7px 8px,#3f4a37 9px 15px)}
+#practice-content .shape-movement{margin-top:110px}
+#practice-content .movement-crown{top:-145px;width:190px;height:190px;left:calc(50% - 95px);filter:sepia(.6) saturate(.6)}
+#practice-content .shape-movement .sculpture-surface{padding:42px 35px 48px;clip-path:polygon(8% 0,92% 0,100% 100%,0 100%);background:linear-gradient(110deg,#493023,#856043 50%,#493023)}
+#practice-content .shape-fitness{padding:8px}
+#practice-content .shape-fitness .sculpture-surface{padding:62px 31px;min-height:0;border-radius:44% 48% 41% 45% / 16% 18% 23% 24%;background:linear-gradient(120deg,#525642,#74755a,#464b38);outline-offset:5px}
+@media(min-width:1101px){.practice-workspace.has-detail{grid-template-columns:minmax(0,1fr) 420px}}
+@media(max-width:850px){.contemporary .practice-panel[open]{width:min(440px,100%);background:#f7f4ed;border:0}.contemporary .practice-panel-bar{padding-top:max(10px,env(safe-area-inset-top))}#practice-content{padding:16px 18px max(28px,env(safe-area-inset-bottom))}}
+@media(max-width:360px){#practice-content{padding-inline:13px}#practice-content .shape-mic .sculpture-surface{padding-inline:23px}#practice-content .shape-palette .sculpture-surface{padding-inline:31px}.contemporary #practice-content #practice-title{font-size:32px}}
+
+/* Original Demo 3 object colours, applied only to the opened details. */
+#practice-content .sculpture-object{--object-ink:#f6ead1;--object-muted:#ddcbb7;--object-line:#c8a36a77;--object-gold:#d8bc84}
+#practice-content .shape-mic .sculpture-surface{background:linear-gradient(#67323be8,#542b34f7),repeating-linear-gradient(0deg,transparent 0 11px,#c8a36a88 11px 12px),repeating-linear-gradient(90deg,#672e35 0 11px,#a8834d 11px 12px)}
+#practice-content .shape-hand .sculpture-surface,#practice-content .shape-hand:after{background:#8c3d43}
+#practice-content .hand-crown img,#practice-content .movement-crown{filter:none}
+#practice-content .shape-book,#practice-content .shape-palette{--object-ink:#5b382d;--object-muted:#806750;--object-gold:#9b7944;--object-line:#bda37b66}
+#practice-content .shape-book .sculpture-surface{background:linear-gradient(90deg,#eee0c3,#fbf2df 45%,#dfcbab 49.5%,#f5e8d0 51%,#eee0c3)}
+#practice-content .shape-palette .sculpture-surface{background:#eee0c3}
+#practice-content .shape-mat .sculpture-surface{background:repeating-linear-gradient(0deg,#5e705d 0 5px,#62745f 5px 6px)}
+#practice-content .mat-roll{background:repeating-radial-gradient(ellipse at center,#5e705d 0 8px,#b39c6a 9px 10px,#435a46 11px 19px)}
+#practice-content .shape-movement .sculpture-surface{background:#672e35}
+#practice-content .shape-fitness .sculpture-surface{background:#5e705d}
+#practice-content .practice-enquire{background:#f2e4c7;color:#5b2e32;border-color:#d3b278}
+#practice-content .shape-book .practice-enquire,#practice-content .shape-palette .practice-enquire{background:#672e35;color:#f4e4c7;border-color:#672e35}

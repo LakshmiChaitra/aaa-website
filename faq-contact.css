@@ -1,0 +1,24 @@
+/* Calm FAQ typography and a compact contact shortcut. */
+.contemporary .faq{display:grid;grid-template-columns:.85fr 1.15fr;gap:85px;border-top:1px solid var(--line)}
+.faq-intro>p:not(.eyebrow){font:400 14px/1.9 var(--sans);color:var(--muted);max-width:300px;margin:26px 0}
+.faq-list details{border-top:1px solid var(--line)}
+.faq-list details:last-child{border-bottom:1px solid var(--line)}
+.faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:23px 0;list-style:none;cursor:pointer;font:500 16px/1.55 var(--sans);color:var(--ink)}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary>span{font:300 25px/1 var(--sans);color:var(--brass);flex-shrink:0;transition:transform .2s}
+.faq-list details[open] summary>span{transform:rotate(45deg)}
+.faq-list details[open] summary{color:#80613f}
+.faq-list details>div{padding:0 30px 24px 0;font:400 14px/1.9 var(--sans);color:var(--muted)}
+.faq-list details a{display:inline-block;color:#715333;text-decoration:underline;text-underline-offset:4px;font-size:12px;margin-top:15px}
+.faq-list summary:focus-visible,.quick-contact a:focus-visible{outline:2px solid #b78b4e;outline-offset:4px}
+.quick-contact{position:fixed;bottom:22px;right:24px;z-index:20;display:flex;align-items:center;border:1px solid #b99a68;border-radius:40px;background:#2c241bf5;box-shadow:0 6px 24px #160d0725;color:#f9ecd5;overflow:hidden}
+.quick-contact[hidden],body:has(dialog[open]) .quick-contact{display:none}
+.quick-contact a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;font:500 12px/1.5 var(--sans);color:inherit}
+.quick-contact a+a{border-left:1px solid #b99a6855}
+.quick-contact a:hover{background:#54412d}
+.quick-contact svg{width:21px;height:21px;flex-shrink:0;color:#dfc18e}
+html{scroll-padding-bottom:90px}
+.contemporary footer{padding-bottom:100px}
+@media(max-width:850px){.contemporary .faq{grid-template-columns:1fr;gap:36px}.faq-intro>p:not(.eyebrow){margin:20px 0;max-width:420px}}
+@media(max-width:540px){.faq-list summary{font-size:14px;padding:20px 0;gap:18px;min-height:54px}.faq-list details>div{padding-right:14px;font-size:13px}.faq-intro>p:not(.eyebrow){font-size:13px}.quick-contact{left:16px;right:16px;bottom:max(12px,env(safe-area-inset-bottom));border-radius:14px;justify-content:stretch}.quick-contact a{flex:1;padding:0 12px;min-height:50px}.contemporary footer{padding-bottom:100px}}
+@media(prefers-reduced-motion:reduce){.faq-list summary>span{transition:none}}

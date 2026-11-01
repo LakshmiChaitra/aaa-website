@@ -1,0 +1,13 @@
+function practiceElement(item){
+ const kind=item.name.includes('Zumba')?'fitness':({mic:'mic',mudra:'mudra',book:'book',movement:'dance',brush:'palette',mat:'mat'}[item.icon]||'mic');
+ return `<img class="practice-element" src="assets/elements/${kind}.svg" alt="" width="160" height="180" decoding="async">`;
+}
+// Workshop information shares the same directory and detail panel as regular classes.
+const workshops=[
+ {name:'Sankeertanas workshop',tag:'MUSIC & DEVOTION',icon:'mic',shape:'mic',workshop:true,enquiry:'Sankeertanas workshop',description:'Devotional music, shared practice and a thoughtful space to learn together.',slots:[['Monday–Thursday','10:30 a.m.–12 noon']],note:'Small batches are formed based on enrolments.'},
+ {name:'Sunday music workshop',tag:'A SUNDAY IN SONG',icon:'mic',shape:'mic',workshop:true,enquiry:'Sunday workshops',description:'Make room for music and discover the joy of learning in a shared workshop.',slots:[['When','Sunday'],['Dates & timings','Enquire with the academy']],note:'Conducted based on enrolments. The next date and fees will be shared by the academy.'},
+ {name:'Sunday dance workshop',tag:'A SUNDAY IN MOVEMENT',icon:'mudra',shape:'hand',workshop:true,enquiry:'Sunday workshops',description:'Explore expression, rhythm and storytelling through a shared dance workshop.',slots:[['When','Sunday'],['Dates & timings','Enquire with the academy']],note:'Conducted based on enrolments. Ask about the next workshop and its dance discipline.'},
+ {name:'Sunday art workshop',tag:'A SUNDAY TO CREATE',icon:'brush',shape:'palette',workshop:true,enquiry:'Sunday workshops',description:'A little time for imagination, colour and creating something with your own hands.',slots:[['When','Sunday'],['Dates & timings','Enquire with the academy']],note:'Conducted based on enrolments. Dates, activity details and fees are shared on enquiry.'}
+];
+
+function workshopCardMarkup(workshop,index){return `<button type="button" class="course course-card workshop-course-card" data-category="workshop" data-workshop-index="${index}" aria-expanded="false" aria-controls="practice-panel"><span class="course-card-top"><span>WORKSHOP / ${workshop.tag}</span><span aria-hidden="true">↗</span></span><span class="course-card-symbol" aria-hidden="true">${practiceElement(workshop)}</span><span class="course-card-title">${workshop.name}</span><span class="course-card-description">${index===0?'Monday–Thursday · 10:30 a.m.–12 noon':'Sundays · Dates and timings on enquiry'}<br>Small batches · Based on enrolments</span><span class="course-card-bottom">View workshop details <span aria-hidden="true">+</span></span></button>`;}

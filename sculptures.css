@@ -1,0 +1,96 @@
+/* Sculptural reveals: the information is part of the object, never a side panel. */
+.sculpture-stage{position:relative;isolation:isolate;display:flex;justify-content:center;align-items:flex-start;padding:45px 30px 40px;background:radial-gradient(ellipse at 50% 35%,#e8d5ad44,transparent 70%);overflow:hidden}
+.sculpture-stage:before{content:'';position:absolute;width:570px;height:570px;top:80px;left:50%;transform:translateX(-50%);background:url('assets/muggu.svg') center/contain no-repeat;opacity:.08;z-index:-1;pointer-events:none}
+.sculpture-object{position:relative;width:min(100%,570px);isolation:isolate;transform-style:preserve-3d}
+.sculpture-surface{position:relative;background:#672e35;border:2px solid #ae8b52;padding:70px 75px;box-shadow:0 22px 35px #59382b15;color:#f6ead1;isolation:isolate}
+.sculpture-copy{position:relative;z-index:2;text-align:center}
+.sculpture-copy>.eyebrow{font-size:7px;letter-spacing:1.7px;color:#d8bc84}
+.sculpture-copy h3{font:400 45px/1.02 var(--serif);letter-spacing:-.7px;margin:14px 0 18px;text-wrap:balance}
+.sculpture-description{font-size:11px;line-height:1.9;color:#ddcbb7;max-width:360px;margin-inline:auto}
+.sculpture-schedule{border-top:1px solid #c8a36a77;margin-top:23px;padding-top:15px;text-align:left}
+.sculpture-schedule>span{display:block;text-align:center;font-size:6px;letter-spacing:1.6px;color:#d8bc84;margin-bottom:12px}
+.sculpture-schedule>div{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:9px 0;border-bottom:1px solid #c8a36a44;font-size:10px;line-height:1.7}
+.sculpture-schedule>div>span{color:#d7c2aa}.sculpture-schedule strong{color:#faedd1;font-weight:500;text-align:right}
+.sculpture-note{font-size:9px;line-height:1.9;color:#d8bf9b;margin-top:14px}
+.sculpture-copy>.button{background:#f2e4c7;color:#5b2e32;border-color:#d3b278;margin-top:24px;padding:11px 15px;font-size:9px;gap:20px;max-width:100%;text-align:left}
+.sculpture-copy>.button:hover{background:#fff2d8}
+.sculpture-copy>small{display:block;font-size:6px;letter-spacing:1px;color:#c8ab7b;margin-top:17px;line-height:1.7}
+/* Microphone: a rounded grille head, cradle and stand. */
+.shape-mic{padding-inline:25px;padding-bottom:100px}
+.shape-mic .sculpture-surface{border-radius:250px;padding:80px 65px 75px;min-height:565px;background:linear-gradient(#67323be8,#542b34f7),repeating-linear-gradient(0deg,transparent 0 11px,#c8a36a88 11px 12px),repeating-linear-gradient(90deg,#672e35 0 11px,#a8834d 11px 12px)}
+.shape-mic .sculpture-surface:before{content:'';position:absolute;inset:7px;border:1px solid #c8a36a66;border-radius:inherit;pointer-events:none}
+.mic-cradle{position:absolute;top:35%;bottom:74px;left:0;right:0;border:2px solid #a17d45;border-top:0;border-radius:0 0 50% 50%;z-index:-1}
+.mic-cradle:before,.mic-cradle:after{content:'';position:absolute;top:-8px;width:9px;height:24px;border:1px solid #a17d45;background:#eee1c5;border-radius:6px}.mic-cradle:before{left:-5px}.mic-cradle:after{right:-5px}
+.mic-stand{position:absolute;bottom:15px;height:60px;width:2px;background:#a17d45;left:calc(50% - 1px)}
+.mic-stand:after{content:'';position:absolute;bottom:0;left:-92px;width:186px;height:3px;background:#a17d45;border-radius:4px}
+/* Mudra: its fingers continue into a broad palm holding the copy. */
+.shape-hand{margin-top:155px;max-width:530px}
+.hand-crown{position:absolute;top:-183px;left:0;right:0;height:225px;overflow:hidden;z-index:-1}
+.hand-crown img{width:100%;height:auto;max-width:none}
+.shape-hand .sculpture-surface{background:#8c3d43;border-radius:60px 80px 55px 55px;padding:63px 65px 65px}
+.shape-hand:after{content:'';position:absolute;bottom:-13px;left:20%;right:20%;height:22px;border-block:3px double #a17d45;background:#8c3d43;z-index:-1}
+/* Open pages, with a quieter light surface. */
+.shape-book{width:min(100%,720px);margin:25px 0}
+.shape-book .sculpture-surface{background:linear-gradient(90deg,#eee0c3,#fbf2df 45%,#dfcbab 49.5%,#f5e8d0 51%,#eee0c3);border-radius:20px 20px 5px 5px;color:#5b382d;padding:56px 85px 55px;box-shadow:0 7px 0 #d2b98e,0 10px 0 #a8824d,0 25px 35px #59382b15}
+.shape-book .sculpture-surface:before,.shape-book .sculpture-surface:after{content:'';position:absolute;top:-10px;bottom:8px;width:49%;border:1px solid #b69a6e;border-radius:20px 20px 2px 2px;background:#f3e6cd;z-index:-1}.shape-book .sculpture-surface:before{left:-8px;transform:rotate(-2deg)}.shape-book .sculpture-surface:after{right:-8px;transform:rotate(2deg)}
+.shape-book .sculpture-copy{max-width:440px;margin:auto}
+/* Palette: paint marks and the thumb hole sit around the readable centre. */
+.shape-palette{width:min(100%,670px);margin-top:14px}
+.shape-palette .sculpture-surface{background:#eee0c3;color:#5b382d;border-radius:47% 46% 41% 34% / 30% 38% 40% 43%;padding:95px 105px 82px}
+.shape-palette .sculpture-surface:after{content:'';position:absolute;right:10%;top:13%;width:36px;height:49px;background:#f4ecdd;border:1px solid #ac8b59;border-radius:50%;transform:rotate(-25deg);box-shadow:inset 3px 3px 5px #6b493017}
+.palette-paints{position:absolute;z-index:3;inset:0;pointer-events:none}
+.palette-paints i{position:absolute;width:21px;height:19px;border-radius:48% 52% 40% 60%;background:#823c41;left:19%;top:11%;box-shadow:inset -3px -3px 0 #0001}
+.palette-paints i:nth-child(2){left:29%;top:6%;background:#64755c;width:25px;height:21px}
+.palette-paints i:nth-child(3){left:40%;top:4%;background:#b18b53;width:23px;height:21px}
+.palette-paints i:nth-child(4){left:51%;top:6%;background:#4f6071}
+/* A rolled mat with the lesson held on its woven surface. */
+.shape-mat{width:min(100%,720px);padding-left:45px;margin-top:20px}
+.shape-mat .sculpture-surface{background:repeating-linear-gradient(0deg,#5e705d 0 5px,#62745f 5px 6px);border-radius:12px;padding:60px 70px 60px 90px;min-height:500px}
+.mat-roll{position:absolute;left:8px;top:0;bottom:0;width:76px;border-radius:50%;border:2px solid #ae8b52;background:repeating-radial-gradient(ellipse at center,#5e705d 0 8px,#b39c6a 9px 10px,#435a46 11px 19px);box-shadow:8px 0 14px #263b2829}
+/* Movement and fitness hold their copy within the silhouette. */
+.shape-movement{margin-top:165px;width:min(100%,650px)}
+.movement-crown{position:absolute;top:-220px;left:calc(50% - 135px);width:270px;height:270px;object-fit:contain;z-index:-1}
+.shape-movement .sculpture-surface{background:#672e35;clip-path:polygon(10% 0,90% 0,100% 100%,0 100%);padding:55px 95px 60px;border-radius:40px 40px 15px 15px}
+.shape-fitness{width:min(100%,650px);padding:12px}
+.shape-fitness .sculpture-surface{background:#5e705d;border-radius:48% 52% 47% 53% / 40% 42% 58% 60%;padding:77px 92px;min-height:570px;outline:1px solid #b18b5380;outline-offset:8px}
+.shape-book .eyebrow,.shape-palette .eyebrow{color:#9b7944}
+.shape-book .sculpture-description,.shape-palette .sculpture-description{color:#806750}
+.shape-book .sculpture-schedule,.shape-palette .sculpture-schedule{border-top-color:#b79b6d}
+.shape-book .sculpture-schedule>span,.shape-palette .sculpture-schedule>span{color:#9b7944}
+.shape-book .sculpture-schedule>div,.shape-palette .sculpture-schedule>div{border-bottom-color:#bda37b66}
+.shape-book .sculpture-schedule>div>span,.shape-palette .sculpture-schedule>div>span{color:#806750}
+.shape-book .sculpture-schedule strong,.shape-palette .sculpture-schedule strong{color:#683a37}
+.shape-book .sculpture-note,.shape-palette .sculpture-note{color:#806750}
+.shape-book .sculpture-copy>.button,.shape-palette .sculpture-copy>.button{background:#672e35;color:#f4e4c7;border-color:#672e35}
+.shape-book .sculpture-copy>small,.shape-palette .sculpture-copy>small{color:#9b7944}
+.workshop-intro-note{font-size:10px;color:var(--muted);margin-bottom:24px}
+.workshop-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.workshop-card{display:flex;flex-direction:column;align-items:flex-start;min-height:340px;padding:25px 22px;background:#eee5d4;border:1px solid #ccb695;color:var(--ink);text-align:left;transition:translate .25s,box-shadow .25s,border-color .25s}
+.workshop-card:nth-child(3){background:#ece2d5}.workshop-card:nth-child(4){background:#e9e8dc}
+.workshop-card:hover{translate:0 -4px;border-color:var(--brass);box-shadow:0 10px 25px #59382b10}
+.workshop-card-number{font-size:6px;color:var(--brass);letter-spacing:1px}
+.workshop-card>svg{width:65px;height:65px;margin:25px 0;color:var(--maroon)}
+.workshop-card-tag{font-size:6px;letter-spacing:1.2px;color:var(--brass);margin-bottom:11px}
+.workshop-card>strong{font:400 31px/1.1 var(--serif);letter-spacing:-.5px}
+.workshop-card-note{font-size:9px;line-height:1.8;color:var(--muted);margin-top:16px;max-width:190px}
+.workshop-card-action{display:flex;justify-content:space-between;align-items:center;width:100%;border-top:1px solid #c8b08b77;font-size:8px;padding-top:15px;margin-top:auto;color:var(--maroon)}
+.workshop-card-note+.workshop-card-action{margin-top:22px}.workshop-card-action>span{font-size:18px}
+.workshop-reveal{scroll-margin-top:110px}
+@media(max-width:1000px){.workshop-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.workshop-card{min-height:300px}.workshop-card>strong{font-size:33px}.workshop-card>svg{margin-block:20px}.header nav{gap:15px}.header nav a{font-size:9px}}
+@media(max-width:700px){.sculpture-stage{padding:27px 9px 30px}.sculpture-stage:before{width:370px;height:370px}.sculpture-object{width:100%}.sculpture-surface{padding:62px 34px}.sculpture-copy>.eyebrow{font-size:6px;letter-spacing:1.1px}.sculpture-copy h3{font-size:34px;margin:13px 0 17px}.sculpture-description{font-size:10px;line-height:1.9}.sculpture-schedule{margin-top:20px;padding-top:15px}.sculpture-schedule>span{font-size:6px;letter-spacing:1px}.sculpture-schedule>div{font-size:9px;gap:10px;line-height:1.8;padding:9px 0}.sculpture-note{font-size:8px}.sculpture-copy>.button{font-size:8px;padding:10px 11px;gap:11px;margin-top:20px;width:100%;text-align:left}.sculpture-copy>.button>span{font-size:14px}.sculpture-copy>small{font-size:5px;letter-spacing:.6px;margin-top:15px}.shape-mic{padding:0 12px 80px}.shape-mic .sculpture-surface{padding:70px 29px 65px;border-radius:180px;min-height:535px}.shape-mic .sculpture-copy h3{font-size:35px}.mic-cradle{bottom:62px;left:0;right:0}.mic-stand{bottom:12px;height:51px}.mic-stand:after{width:132px;left:-65px;height:2px}.shape-hand{margin-top:112px}.hand-crown{top:-123px;height:160px}.shape-hand .sculpture-surface{padding:52px 32px 48px;border-radius:45px 50px 45px 45px}.shape-book{margin-block:15px}.shape-book .sculpture-surface{padding:40px 27px}.shape-book .sculpture-copy h3{font-size:37px}.shape-palette{margin-top:10px}.shape-palette .sculpture-surface{padding:75px 42px 65px;border-radius:43% 45% 35% 38% / 20% 25% 25% 30%}.shape-palette .sculpture-surface:after{right:8%;top:12%;width:21px;height:30px}.palette-paints i{width:14px;height:13px;top:8%;left:17%}.palette-paints i:nth-child(2){width:16px;height:14px;top:4%;left:29%}.palette-paints i:nth-child(3){width:14px;height:13px;top:3%;left:42%}.palette-paints i:nth-child(4){top:4%;left:55%;width:14px;height:14px}.shape-palette .sculpture-copy h3{font-size:34px}.shape-mat{padding-left:22px;margin-top:10px}.shape-mat .sculpture-surface{padding:46px 25px 46px 39px}.mat-roll{left:0;width:43px}.shape-movement{margin-top:122px}.movement-crown{top:-165px;width:205px;height:205px;left:calc(50% - 102px)}.shape-movement .sculpture-surface{padding:45px 39px 49px;clip-path:polygon(7% 0,93% 0,100% 100%,0 100%)}.shape-fitness{padding:9px}.shape-fitness .sculpture-surface{padding:65px 36px;min-height:555px;outline-offset:5px;border-radius:45% 48% 42% 47% / 20% 22% 30% 30%}.workshop-cards{gap:14px}.workshop-card{padding:20px 16px;min-height:300px}.workshop-card>strong{font-size:28px}.workshop-card>svg{width:50px;height:50px;margin:20px 0}.workshop-card-number,.workshop-card-tag{font-size:5px;letter-spacing:.6px}.workshop-card-note{font-size:8px}.workshop-card-action{font-size:7px;gap:8px}.workshop-intro-note{font-size:9px;line-height:1.9}.workshop-reveal{scroll-margin-top:86px}.header nav a{font-size:13px}}
+@media(max-width:380px){.workshop-cards{grid-template-columns:1fr}.workshop-card{min-height:265px;padding:24px}.workshop-card>strong{font-size:33px}.workshop-card-number,.workshop-card-tag{font-size:7px}.workshop-card-note{font-size:10px;max-width:none}.workshop-card-action{font-size:9px}.shape-mic .sculpture-surface{padding-inline:24px}.shape-mic .sculpture-copy h3{font-size:32px}.shape-palette .sculpture-surface{padding-inline:32px}.shape-book .sculpture-surface{padding-inline:23px}}
+@media(prefers-reduced-motion:reduce){.workshop-card{transition:none}}
+/* Keep practical details legible at every viewport size. */
+.sculpture-description{font-size:13px;line-height:1.8}
+.sculpture-schedule>div{font-size:12px}
+.sculpture-schedule>span,.sculpture-copy>.eyebrow{font-size:8px}
+.sculpture-note{font-size:11px}
+.sculpture-copy>.button{font-size:11px}
+.sculpture-copy>small{font-size:7px}
+.workshop-card-number,.workshop-card-tag{font-size:8px}
+.workshop-card-note{font-size:11px}
+.workshop-card-action,.workshop-intro-note{font-size:11px}
+@media(max-width:700px){.sculpture-description{font-size:12px}.sculpture-schedule>div{font-size:11px;flex-wrap:wrap;gap:3px 10px}.sculpture-schedule>span,.sculpture-copy>.eyebrow{font-size:7px}.sculpture-note{font-size:11px}.sculpture-copy>.button{font-size:10px}.sculpture-copy>small{font-size:6px}.workshop-card-number,.workshop-card-tag{font-size:7px}.workshop-card-note,.workshop-card-action,.workshop-intro-note{font-size:11px}.workshop-card>strong{font-size:27px}}
+.hand-crown{top:-177px;height:210px}
+.hand-crown img{display:block;width:100%;height:100%;object-fit:fill}
+@media(max-width:700px){.hand-crown{top:-124px;height:153px}}

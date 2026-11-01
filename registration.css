@@ -1,0 +1,70 @@
+.registration-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.registration-intro{font:400 34px/1.2 var(--serif);color:var(--ink);margin:0 0 30px}.registration-intro em{color:var(--brass)}
+.registration-guide .registration-steps{grid-template-columns:1fr;gap:23px}
+.registration-guide .registration-steps li{display:grid;grid-template-columns:22px 1fr;gap:8px 15px;padding-top:20px}
+.registration-guide .registration-steps li>span{grid-row:1/3;margin-top:6px}
+.registration-guide .registration-steps h3{font-size:27px;margin:0}
+.registration-guide .registration-steps p{grid-column:2;font-size:12px}
+.registration-guide>.text-link{margin-top:30px}
+.registration-form-wrap{padding:30px 32px;background:#fcf8eecf;border:1px solid #cdb99a}
+.registration-form-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.registration-form-heading>span{font:500 9px/1.5 var(--sans);letter-spacing:1.5px;color:var(--brass)}
+.registration-form-heading>small{font:400 10px/1.6 var(--sans);color:var(--muted)}
+.registration-demo-note{font:400 11px/1.7 var(--sans);color:#7a6548;background:#ede3cf88;border-left:2px solid #b5945e;padding:10px 12px;margin-bottom:22px}
+.registration-demo-note[hidden]{display:none}
+.registration-fields{display:grid;grid-template-columns:1fr 110px;gap:23px 22px}
+.registration-field{min-width:0}.reg-full{grid-column:1/-1}
+.registration-field label{display:block;font:500 12px/1.6 var(--sans);color:#5c4631;margin-bottom:8px}
+.registration-field label>span{color:#886237}.registration-field label>small{font-weight:400;color:var(--muted);font-size:10px}
+.registration-field input,.registration-field select,.registration-field textarea{display:block;width:100%;border:0;border-bottom:1px solid #c5b49b;background:transparent;border-radius:0;padding:9px 0 12px;font:400 14px/1.6 var(--sans);color:#42301f;min-height:44px;box-sizing:border-box}
+.registration-field input::placeholder,.registration-field textarea::placeholder{color:#9b8b77}
+.registration-field textarea{resize:vertical;min-height:92px}
+.registration-field :focus-visible{outline:2px solid #b99560;outline-offset:4px}
+.contemporary .registration-submit{display:flex;width:100%;justify-content:space-between;align-items:center;gap:15px;margin-top:28px;padding:16px 19px;background:#4d3526;color:#fff0d6;border:1px solid #4d3526}
+.registration-submit:disabled{opacity:.65;cursor:wait}
+.registration-submit-note{font:400 10px/1.8 var(--sans);text-align:center;color:var(--muted);margin-top:13px}
+.registration-error{font:400 12px/1.8 var(--sans);color:#8c3b35;margin-top:18px}
+.registration-receipt{margin-top:40px;padding:30px 34px;background:#f4ebda;border:1px solid #bda27a;scroll-margin-top:110px;outline:none}
+.registration-receipt[hidden],.registration-receipt-next[hidden],.registration-error[hidden]{display:none}
+.registration-receipt h3{font:500 35px/1.2 var(--serif);margin:12px 0 18px;color:var(--ink)}
+.registration-receipt>p:not(.eyebrow),.registration-receipt-next p{font:400 13px/1.8 var(--sans);color:var(--muted)}
+.registration-receipt dl{margin:24px 0}
+.registration-receipt dl>div{display:grid;grid-template-columns:150px 1fr;gap:15px;border-top:1px solid #d0bea2;padding:13px 0;font:400 13px/1.8 var(--sans)}
+.registration-receipt dt{color:#887052}.registration-receipt dd{margin:0;color:#4f3926;overflow-wrap:anywhere;white-space:pre-wrap}
+.registration-receipt-next .button{margin-top:20px}
+.registration-edit{font:500 12px/1.7 var(--sans);background:transparent;color:#725232;border:0;border-bottom:1px solid #bca37c;padding:10px 0 3px;margin-top:14px;cursor:pointer}
+@media(max-width:850px){.registration-layout{grid-template-columns:1fr;gap:35px}.registration-guide .registration-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.registration-guide .registration-steps li{display:block}.registration-guide .registration-steps h3{margin:12px 0}.registration-intro{font-size:31px}}
+@media(max-width:540px){.registration-guide .registration-steps{grid-template-columns:1fr;gap:20px}.registration-guide .registration-steps li{display:grid}.registration-guide .registration-steps h3{margin:0}.registration-form-wrap{padding:25px 22px}.registration-form-heading{align-items:flex-start;flex-direction:column;gap:7px}.registration-fields{grid-template-columns:minmax(0,1fr) 80px;gap:22px 16px}.registration-field input,.registration-field select,.registration-field textarea{font-size:16px}.registration-field label{font-size:12px}.registration-receipt{padding:25px 20px}.registration-receipt dl>div{grid-template-columns:1fr;gap:3px}.registration-receipt h3{font-size:31px}}
+
+/* A single registration destination, in the former enquiry section. */
+.contemporary .registration-only .registration{padding-block:65px 80px;margin-block:0}
+.registration-top{padding-bottom:42px;margin-bottom:50px;border-bottom:1px solid #b9956138}
+.registration-top>.eyebrow{color:#d4b77d;margin-bottom:22px}
+.registration-top .registration-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.registration-top .registration-steps li{border-color:#a78d613b;padding-top:18px}
+.registration-top .registration-steps li>span{color:#cfaf72}
+.registration-top .registration-steps h3{font-size:25px;color:#ecdfc8;margin-block:13px 12px}
+.registration-top .registration-steps p{font-size:12px;color:#b9ac96}
+.contemporary .registration-only .registration-layout{grid-template-columns:.85fr 1.15fr;gap:9%}
+.contemporary .registration-only .contact-copy>.eyebrow{color:#cbb17b;margin-bottom:25px}
+.contemporary .registration-only .contact-copy h2{font:500 clamp(42px,4.5vw,62px)/1.04 var(--serif);color:#f3e8d5;letter-spacing:-1.5px;margin-bottom:25px}
+.contemporary .registration-only .contact-copy h2 em{color:#d9b97f;font-weight:400}
+.contemporary .registration-only .contact-copy>p:not(.eyebrow){max-width:350px}
+.contemporary .registration-only .contact-copy .contact-phone{margin-top:30px}
+.contemporary .registration-only .contact-copy .address{margin-top:42px}
+.registration-only .registration-form-wrap{background:#211a12;border-color:#a68a5c3b}
+.registration-only .registration-form-heading{border-color:#a38c663f}
+.registration-only .registration-form-heading>span{color:#ccb180}
+.registration-only .registration-form-heading>small{color:#b6a58a}
+.registration-only .registration-demo-note{background:#332a1b;color:#d8c39c;border-color:#a58651}
+.registration-only .registration-field label{color:#e4d5bd}
+.registration-only .registration-field label>small{color:#b3a389}
+.registration-only .registration-field label>span{color:#d9b87b}
+.registration-only .registration-field input,.registration-only .registration-field select,.registration-only .registration-field textarea{border-color:#a38c663f;color:#f0e4d1;color-scheme:dark}
+.registration-only .registration-field input::placeholder,.registration-only .registration-field textarea::placeholder{color:#a19581}
+.registration-only .registration-field option,.registration-only .registration-field optgroup{background:#211a12;color:#ede0c9}
+.contemporary .registration-only .registration-submit{background:#ddbf87;border-color:#ddbf87;color:#21180f}
+.registration-only .registration-submit-note{color:#b5a58a}
+.registration-only .registration-error{color:#efb1a2}
+@media(max-width:850px){.registration-top .registration-steps{gap:22px}.contemporary .registration-only .registration-layout{grid-template-columns:1fr;gap:35px}.contemporary .registration-only .contact-copy .address{margin-top:28px}}
+@media(max-width:540px){.registration-top{padding-bottom:30px;margin-bottom:35px}.registration-top .registration-steps{grid-template-columns:1fr;gap:23px}.registration-top .registration-steps li{display:grid;grid-template-columns:22px 1fr;gap:8px 15px}.registration-top .registration-steps li>span{grid-row:1/3;margin-top:4px}.registration-top .registration-steps h3{margin:0;font-size:25px}.registration-top .registration-steps p{grid-column:2}.contemporary .registration-only .registration{padding-block:50px 60px}.contemporary .registration-only .contact-copy h2{font-size:45px}.contemporary .registration-only .contact-copy .contact-phone{font-size:31px}}

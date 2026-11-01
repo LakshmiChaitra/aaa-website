@@ -1,0 +1,86 @@
+/* Client-approved manuscript and traditional framing, with contemporary spacing. */
+.contemporary .manuscript-pair{gap:32px;align-items:stretch}
+.contemporary .manuscript-pair article{position:relative;isolation:isolate;border:0;padding:85px 13% 95px;min-height:650px;display:flex;flex-direction:column;justify-content:center}
+.manuscript-pair article::before{content:"";position:absolute;inset:0;z-index:-1;background:url('assets/client-revision/vision-scroll.png') center/100% 100% no-repeat;mix-blend-mode:multiply;pointer-events:none}
+.contemporary .manuscript-pair .deepa-purpose-label{justify-content:center;gap:0;margin-bottom:25px}
+.contemporary .manuscript-pair .deepa-purpose-label>span{display:none}
+.contemporary .manuscript-pair .deepa-purpose-label h2{font-size:42px;color:#4d392a}
+.contemporary .manuscript-pair article>p{font-size:14px;line-height:1.95;color:#66513b;text-align:center}
+.contemporary .manuscript-pair strong{color:#493222}
+.heritage-frame{position:relative}
+.heritage-frame::before,.heritage-frame::after{content:"";position:absolute;left:0;right:0;height:28px;pointer-events:none;background:url('assets/client-revision/heritage-rule.svg') center/120px 28px repeat-x;opacity:.72}
+.heritage-frame::before{top:0}.heritage-frame::after{bottom:0}
+.contemporary .founder{gap:8%;padding-block:95px;border:0;align-items:center}
+.contemporary .founder-photo{position:relative;padding:14px;border:1px solid #ac8b57;outline:1px solid #c7af8944;outline-offset:7px;background:#eee3d0}
+.contemporary .photo-arch{border-radius:170px 170px 0 0;aspect-ratio:.78;background:#e8decd;overflow:hidden}
+.contemporary .photo-arch img{filter:none;object-position:center 30%}
+.founder-portrait-label{display:block;text-align:center;padding:22px 5px 8px;font:500 11px/1.6 var(--sans);letter-spacing:1.4px;color:#604b32}
+.founder-portrait-label>span{display:block;font-size:8px;color:#8c7351;margin-top:5px;letter-spacing:2px}
+.contemporary .founder-copy #founder-title{font-size:clamp(48px,5vw,74px);line-height:1;letter-spacing:-2px}
+.founder-heading-note{display:block;margin-top:22px;font:400 32px/1.2 var(--serif);letter-spacing:-.4px}
+.contemporary .founder-role{display:block;font-size:9px;line-height:1.9;letter-spacing:1px;margin:24px 0;color:#876b47}
+.contemporary .founder-copy>p:not(.eyebrow){font-size:14px;line-height:1.95}
+.contemporary .founder-details{margin-top:24px}
+.contemporary .faculty{padding-block:75px 90px}
+.faculty-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.faculty-introduction{grid-column:1/-1;border-block:1px solid var(--line);padding:35px;text-align:center;background:#f5eddf66}
+.faculty-ornament{font:400 37px var(--serif);color:#ab8958}
+.faculty-introduction h3,.faculty-card h3{font:500 30px/1.2 var(--serif);margin:15px 0 12px;color:var(--ink)}
+.faculty-introduction p,.faculty-card p{font:400 13px/1.9 var(--sans);color:var(--muted)}
+.faculty-pending{display:block;font:400 11px/1.7 var(--sans);color:#8b775d;margin-top:15px}
+.faculty-card>img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid #c9b28e;padding:6px}
+.faculty-subject{font:500 9px/1.8 var(--sans);text-transform:uppercase;letter-spacing:1px;color:var(--brass)}
+.contemporary .album-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.contemporary .album-grid figure,.contemporary .album-grid figure:nth-child(n){grid-column:auto;padding:0;margin:0;min-width:0}
+.contemporary .album-photo{display:block;position:relative;width:100%;aspect-ratio:4/3;border-radius:2px;background:#e9e2d7;overflow:hidden}
+.contemporary .album-photo>img{inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:none}
+.contemporary .album-photo-overlay{display:flex;justify-content:flex-end;align-items:flex-end;inset:0;background:linear-gradient(0deg,#120d0740,transparent 40%);opacity:0;padding:12px}
+.contemporary .album-photo:hover .album-photo-overlay,.contemporary .album-photo:focus-visible .album-photo-overlay{opacity:1}
+.contemporary .album-photo-overlay>b{width:30px;height:30px;display:grid;place-items:center;background:#fff5e8e6;color:#59422d;border-radius:50%;font-size:17px}
+.contemporary .registration{padding-block:80px;margin-block:0 65px}
+.registration-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px;padding:0;list-style:none;margin:0}
+.registration-steps li{border-top:1px solid var(--line);padding-top:20px}
+.registration-steps li>span{font:500 10px/1.5 var(--sans);color:var(--brass);letter-spacing:1px}
+.registration-steps h3{font:500 30px/1.2 var(--serif);margin:18px 0 14px;color:var(--ink)}
+.registration-steps p{font:400 13px/1.9 var(--sans);color:var(--muted)}
+.registration-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-top:35px}
+.registration-note{font:400 11px/1.8 var(--sans);color:var(--muted);margin-top:20px;max-width:650px}
+/* Icon-only left dock; existing on-scroll visibility is retained. */
+.quick-contact{left:14px;right:auto;bottom:20px;flex-direction:column;border-radius:28px;background:#2c241bf5;padding:3px;overflow:visible}
+.quick-contact a{width:44px;height:44px;min-height:44px;padding:0;flex:none;border-radius:50%}
+.quick-contact a+a{border:0;border-top:1px solid #b99a6833}
+.quick-contact a[aria-disabled=true]{opacity:.4;cursor:default}
+.upcoming-invitation{position:fixed;right:12px;bottom:17px;width:116px;z-index:19;display:block;filter:drop-shadow(0 4px 5px #0002);transform-origin:bottom center}
+.upcoming-invitation img{display:block;width:100%;height:auto}
+.upcoming-invitation[hidden],body:has(dialog[open]) .upcoming-invitation{display:none}
+.upcoming-invitation:hover{transform:translateY(-4px)}
+.upcoming-invitation:focus-visible{outline:2px solid #b78b4e;outline-offset:5px}
+@media(min-width:701px) and (max-width:1050px){.contemporary .manuscript-pair article{padding-inline:12%;min-height:700px}.contemporary .manuscript-pair article>p{font-size:13px}.academy-navigation .header nav{gap:14px}.academy-navigation .header nav a{font-size:9px;letter-spacing:.8px}}
+@media(max-width:700px){.contemporary .manuscript-pair{grid-template-columns:1fr;gap:22px}.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{padding:75px 15% 85px;min-height:590px;border:0}.contemporary .manuscript-pair article>p{font-size:14px;line-height:1.95}.contemporary .manuscript-pair .deepa-purpose-label h2{font-size:38px}.contemporary .founder{padding-block:75px}.contemporary .founder-photo{width:88%;margin:0 auto;padding:12px;max-width:360px}.contemporary .founder-copy #founder-title{font-size:53px}.founder-heading-note{font-size:29px}.faculty-grid{grid-template-columns:1fr}.faculty-introduction{padding:28px 20px}.contemporary .faculty{padding-block:55px 65px}.contemporary .album-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.contemporary .registration{padding-block:65px;margin-bottom:45px}.registration-steps{grid-template-columns:1fr;gap:28px}.registration-steps li{display:grid;grid-template-columns:24px 1fr;gap:10px 14px}.registration-steps li>span{grid-row:1/3;margin-top:6px}.registration-steps h3{margin:0;font-size:28px}.registration-steps p{grid-column:2}.registration-actions{gap:22px;align-items:flex-start;flex-direction:column}.quick-contact{left:9px;right:auto;bottom:14px;border-radius:26px}.quick-contact a{width:38px;height:40px;min-height:40px;padding:0;flex:none}.quick-contact svg{width:19px;height:19px}.upcoming-invitation{width:78px;right:8px;bottom:15px}.upcoming-invitation:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.upcoming-invitation{transition:none;transform:none}}
+
+/* Keep the writing safely inside the paper, clear of its curled and inked edges. */
+.contemporary .manuscript-pair{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch}
+.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{box-sizing:border-box;min-height:720px;padding:105px 19% 115px;border:0;justify-content:center}
+.contemporary .manuscript-pair .deepa-purpose-label{margin-bottom:24px}
+.contemporary .manuscript-pair .deepa-purpose-label h2{font-size:46px;line-height:1.12;white-space:nowrap}
+.contemporary .manuscript-pair article>p{width:100%;max-width:none;font-size:18px;line-height:1.75;letter-spacing:0;margin:0;text-align:center;text-wrap:pretty;overflow-wrap:normal}
+@media(min-width:901px) and (max-width:1100px){.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{padding:100px 18.5% 110px;min-height:740px}.contemporary .manuscript-pair article>p{font-size:17px;line-height:1.75}.contemporary .manuscript-pair .deepa-purpose-label h2{font-size:40px}}
+@media(max-width:900px){.contemporary .manuscript-pair{grid-template-columns:minmax(0,1fr);max-width:600px;margin-inline:auto;gap:28px}.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{padding:95px 19% 110px;min-height:650px}.contemporary .manuscript-pair article>p{font-size:18px;line-height:1.75}}
+@media(max-width:540px){.contemporary .deepa-purpose{padding-inline:14px}.contemporary .deepa-purpose-intro{padding-inline:8px}.contemporary .manuscript-pair{gap:24px}.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{padding:90px 19% 100px;min-height:650px}.contemporary .manuscript-pair .deepa-purpose-label{margin-bottom:22px}.contemporary .manuscript-pair .deepa-purpose-label h2{font-size:36px}.contemporary .manuscript-pair article>p{font-size:16px;line-height:1.8}}
+@media(max-width:360px){.contemporary .manuscript-pair article>p{font-size:16px;line-height:1.75}.contemporary .manuscript-pair .deepa-purpose-label h2{font-size:32px}}
+
+/* Additional inner gutter clears the longest hand-drawn edge flourishes. */
+.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{padding-inline:23.5%;min-height:760px}
+@media(max-width:900px){.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{padding-inline:22.5%;min-height:680px}}
+
+/* Extend the paper's centre on phones while retaining the curled ends' proportions. */
+@media(max-width:540px){.manuscript-pair article::before{background:none;border:1px solid transparent;border-image:url('assets/client-revision/vision-scroll.png') 240 200 250 200 fill / 100px 19% 110px 19% / 0 stretch}.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{padding-top:125px;padding-bottom:145px}}
+
+@media(min-width:901px){.contemporary .manuscript-pair article,.contemporary .manuscript-pair article+article{justify-content:flex-start;padding-top:160px}}
+
+/* Preserve the complete artwork within the existing album frames. */
+.contemporary .album-photo.album-artwork>img{object-fit:contain;padding:10px;box-sizing:border-box}
+
+/* One divider between the timetable and founder, rather than two adjacent ornaments. */
+#timetable.heritage-frame::after{display:none}

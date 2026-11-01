@@ -1,0 +1,43 @@
+.contemporary .upcoming-invitation{width:150px;right:18px;bottom:18px}
+body.workshops-open{overflow:hidden}
+#weekly-workshops{border:0;padding:0;background:transparent;box-shadow:none;width:min(620px,94vw);max-width:94vw;max-height:94dvh;overflow:visible;color:#493223}
+#weekly-workshops::backdrop{background:#100907c9;backdrop-filter:blur(5px)}
+.weekly-scroll{position:relative;height:min(850px,90dvh);background:url('assets/client-revision/workshop-scroll.png') center/100% 100% no-repeat;padding:16% 16% 17%;box-sizing:border-box;transform-origin:50% 12%;}
+#weekly-workshops[open] .weekly-scroll{animation:unroll-paper .85s cubic-bezier(.2,.7,.2,1) both}
+.weekly-copy{height:100%;overflow-y:auto;text-align:center;scrollbar-width:thin;padding:12px 0}
+.weekly-copy .weekly-academy{font:600 clamp(19px,3vw,28px)/1.2 'Cormorant Garamond',serif;margin:0}
+.weekly-copy .weekly-presents{font:500 11px/1.5 'DM Sans',sans-serif;letter-spacing:3px;text-transform:uppercase;margin:10px 0}
+.weekly-copy h2{font:600 clamp(34px,5vw,52px)/1.1 'Cormorant Garamond',serif;margin:0 0 20px}
+.weekly-copy .weekly-subtitle{font:500 18px/1.5 'DM Sans',sans-serif;border-block:1px solid #ae864a66;padding:12px 0;margin:0}
+.weekly-plan{min-height:120px;text-align:left}
+.weekly-plan article{padding:18px 0;border-bottom:1px solid #ae864a66}
+.weekly-plan h3{font:600 24px/1.2 'Cormorant Garamond',serif;margin:0 0 8px}
+.weekly-plan p{font:400 16px/1.6 'DM Sans',sans-serif;margin:4px 0;white-space:pre-line;overflow-wrap:anywhere}
+.weekly-close{position:absolute;right:7%;top:2%;width:42px;height:42px;border:1px solid #bd9b64;border-radius:50%;background:#372318;color:#fff2db;font-size:28px;cursor:pointer;z-index:2}
+@keyframes unroll-paper{from{clip-path:inset(0 0 83% 0);transform:translateY(-12px)}to{clip-path:inset(0);transform:translateY(0)}}
+@media(max-width:700px){.contemporary .upcoming-invitation{width:110px;right:8px;bottom:14px}.weekly-scroll{height:min(710px,86dvh);padding-top:23%;padding-bottom:22%}.weekly-copy .weekly-academy{font-size:22px}.weekly-copy h2{font-size:36px}.weekly-copy .weekly-subtitle{font-size:16px}}
+@media(prefers-reduced-motion:reduce){#weekly-workshops[open] .weekly-scroll{animation:none}}
+
+/* Wider parchment with the academy seal. */
+#weekly-workshops{width:min(740px,96vw);max-width:96vw;max-height:96dvh}
+.weekly-scroll{height:min(920px,94dvh);padding-top:15%}
+.weekly-logo{display:block;width:68px;height:68px;object-fit:contain;margin:0 auto 12px}
+@media(max-width:700px){#weekly-workshops{width:96vw}.weekly-scroll{height:90dvh;padding-top:22%}.weekly-logo{width:54px;height:54px;margin-bottom:10px}}
+
+/* Broader desktop scroll; retain the existing height and mobile fit. */
+@media(min-width:701px){
+ #weekly-workshops{width:min(920px,96vw)}
+ .weekly-scroll{padding-top:110px;padding-bottom:120px}
+}
+
+/* Academy wordmark, matching the header's seal-and-type composition. */
+.weekly-brand{display:flex;align-items:center;justify-content:center;gap:22px;margin:0 auto 20px}
+.weekly-brand .weekly-logo{width:88px;height:88px;flex:none;margin:0}
+.weekly-brand .weekly-academy{text-align:left;font-weight:500;line-height:1.05}
+.weekly-academy span{display:block;font-size:clamp(36px,4.4vw,52px)}
+.weekly-academy span+span{font-size:clamp(32px,4vw,46px);margin-top:5px}
+@media(max-width:700px){.weekly-brand{gap:10px;margin-bottom:16px}.weekly-brand .weekly-logo{width:52px;height:52px}.weekly-academy span{font-size:30px}.weekly-academy span+span{font-size:27px}}
+
+.weekly-copy .weekly-presents{font-size:16px;letter-spacing:2.5px;margin:12px 0}
+.weekly-copy h2{font-size:clamp(30px,4vw,42px)}
+@media(max-width:700px){.weekly-copy .weekly-presents{font-size:14px}.weekly-copy h2{font-size:32px}}

@@ -1,0 +1,19 @@
+/* Sculptural objects, with clear readable class information. */
+.contemporary .class-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
+.contemporary .course.course-card,.contemporary .class-list>.course-card:last-child{display:flex;flex-direction:column;align-items:flex-start;min-height:0;padding:28px 20px 25px;gap:0;grid-column:auto}
+.contemporary .course.course-card .course-card-top{align-self:auto;font-size:8px}
+.contemporary .course.course-card .course-card-symbol{display:grid;place-items:center;width:100%;height:170px;margin:18px 0 12px}
+.practice-element{display:block;width:140px;height:160px;object-fit:contain;filter:drop-shadow(3px 9px 5px #62431f15);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.contemporary .course.course-card:hover .practice-element{transform:perspective(600px) rotateY(-12deg) translateY(-5px)}
+.contemporary .course.course-card[aria-expanded=true] .practice-element{transform:perspective(600px) rotateY(12deg)}
+.contemporary .course.course-card .course-card-title{font-size:33px;margin:0 0 12px}
+.contemporary .course.course-card .course-card-description{font-size:12px;margin:0 0 22px;flex:1}
+.contemporary .course.course-card .course-card-bottom{display:flex;align-self:stretch;justify-content:space-between;width:100%;height:auto;max-width:none;border:0;border-radius:0;background:transparent;color:var(--brass);font-size:10px;padding:13px 0 0;margin:0!important;border-top:1px solid #c2b39666}
+.contemporary .course.course-card[aria-expanded=true] .course-card-bottom{background:transparent;color:var(--brass)}
+.contemporary .course.course-card[aria-expanded=true] .course-card-bottom>span{color:var(--brass)}
+.practice-art{flex-direction:column;gap:12px}
+.practice-art .practice-element{width:150px;height:170px}
+@media(min-width:851px){.contemporary .has-detail .class-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.contemporary .has-detail .course.course-card{padding:23px 8px;min-height:0}.contemporary .has-detail .course.course-card .course-card-symbol{width:100%;height:140px}.has-detail .course-card-symbol .practice-element{width:120px;height:135px}.contemporary .has-detail .course.course-card .course-card-bottom{width:100%;height:auto}.contemporary .has-detail .course.course-card .course-card-title{font-size:28px}}
+@media(max-width:850px){.contemporary .class-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}}
+@media(max-width:540px){.contemporary .class-list{grid-template-columns:1fr}.contemporary .course.course-card{padding:25px 12px}.contemporary .course.course-card .course-card-symbol{height:150px}.practice-element{height:145px}.contemporary .course.course-card .course-card-title{font-size:35px}}
+@media(prefers-reduced-motion:reduce){.practice-element{transition:none}.contemporary .course.course-card:hover .practice-element,.contemporary .course.course-card[aria-expanded=true] .practice-element{transform:none}}

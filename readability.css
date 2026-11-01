@@ -1,0 +1,57 @@
+/* Comfortable reading sizes and a full-width, two-by-two teaching approach. */
+.contemporary {font-size:18px}
+.contemporary .academy-promise{font-size:clamp(16px,1.5vw,21px);line-height:1.65;padding:28px 5%;gap:24px;flex-wrap:wrap;text-align:center}
+.contemporary .academy-promise i{font-size:15px}
+.contemporary .section-heading>p,
+.contemporary .founder-copy>p:not(.eyebrow),
+.contemporary .community-story>p:not(.eyebrow),
+.contemporary .upcoming>div>p:not(.eyebrow),
+.contemporary .contact-copy>p:not(.eyebrow),
+.contemporary .film-caption p,
+.contemporary .faculty-introduction p,
+.contemporary .faq-answer{font-size:18px;line-height:1.85}
+.contemporary .eyebrow{font-size:13px;line-height:1.6}
+.contemporary .button,.contemporary .text-link,
+.contemporary .class-filters button,.contemporary .album-filters button{font-size:15px;line-height:1.5}
+.contemporary .film-choice small,.contemporary .film-choice em,
+.contemporary .playlist-title,.contemporary .film-caption>span,
+.contemporary .photo-caption,.contemporary .founder-role{font-size:13px;line-height:1.6}
+.contemporary .film-choice strong{font-size:18px}
+.contemporary .film-note,.contemporary .class-note,
+.contemporary .class-interaction-note,.contemporary .qualifications span,
+.contemporary .founder-details summary,.contemporary .founder-details li,
+.contemporary .founder-details p{font-size:16px;line-height:1.8}
+.contemporary .learning{grid-template-columns:1fr;gap:48px;padding-block:80px}
+.contemporary .learning-title{position:relative;padding-right:120px}
+.contemporary .learning-title h2{font-size:clamp(42px,4.8vw,72px);line-height:1.12;max-width:1100px}
+.contemporary .learning-title img{position:absolute;right:0;top:25px;width:90px;margin:0;opacity:.35}
+.contemporary .learning-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 64px}
+.contemporary .learning-values article,.contemporary .learning-values article:first-child{display:grid;grid-template-columns:32px minmax(0,1fr);align-content:start;gap:18px;padding:32px 0;border-top:1px solid #b5986560;border-bottom:0}
+.contemporary .learning-values article>span{font-size:17px;line-height:1.8}
+.contemporary .learning-values h3{font-size:clamp(23px,2.1vw,30px);line-height:1.4}
+.contemporary .learning-values p{font-size:19px;line-height:1.8;color:#e1d5c3;margin-top:14px;max-width:580px}
+@media(max-width:700px){
+ .contemporary .academy-promise{display:flex;flex-direction:column;gap:10px;padding:24px;font-size:17px}
+ .contemporary .academy-promise i{display:none}
+ .contemporary .learning{gap:28px;padding-block:56px}
+ .contemporary .learning-title{padding-right:0}
+ .contemporary .learning-title img{display:none}
+ .contemporary .learning-values{grid-template-columns:1fr;gap:0}
+ .contemporary .learning-values article{gap:12px}
+ .contemporary .learning-values h3{font-size:24px}
+ .contemporary .learning-values p{font-size:18px}
+ .contemporary .section-heading>p,.contemporary .founder-copy>p:not(.eyebrow),.contemporary .community-story>p:not(.eyebrow){font-size:17px}
+}
+
+/* Center the heading independently of its text width. */
+.contemporary .manuscript-pair article:first-child .deepa-purpose-label{display:block;width:100%;text-align:center;padding-inline:0}
+.contemporary .manuscript-pair article:first-child .deepa-purpose-label h2{width:100%;max-width:none;margin-inline:0;text-align:center;transform:none}
+
+/* Small optical adjustment requested for the vision title. */
+.contemporary .manuscript-pair article:first-child .deepa-purpose-label h2{transform:translateX(-8px)}
+/* Larger, readable timings in both weekly and daily views. */
+.contemporary .schedule-time{font-size:16px;line-height:1.75;font-variant-numeric:tabular-nums}
+.contemporary .day-agenda-grid p{font-size:18px;line-height:1.8;font-variant-numeric:tabular-nums}
+.contemporary .week-table{min-width:1180px}
+.contemporary .week-table thead th{font-size:13px}
+.contemporary .week-table tbody th{font-size:15px}
