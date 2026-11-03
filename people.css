@@ -160,3 +160,12 @@ body:has(#people-photo-dialog[open]){overflow:hidden}
  .tutor-track .faculty-subject{font-size:12px}
  .tutor-track .tutor-experience{font-size:16px}
 }
+
+/* Navigation belongs beside the tutor card. */
+.tutor-stage{position:relative;padding-inline:32px}
+.tutor-side-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:52px;height:52px;border:1px solid #a5824e;border-radius:50%;background:#f9f0df;color:#62432b;box-shadow:0 4px 15px #4b321b1c;font-size:27px;cursor:pointer;display:grid;place-items:center}
+.tutor-side-prev{left:0}.tutor-side-next{right:0}
+.tutor-side-arrow:hover:not(:disabled){background:#493427;color:#fff0d7}
+.tutor-side-arrow:disabled{opacity:.35;cursor:default;box-shadow:none}
+.tutor-side-arrow:focus-visible{outline:2px solid #9b733a;outline-offset:4px}
+@media(max-width:700px){.tutor-stage{padding-inline:14px}.tutor-side-arrow{width:38px;height:38px;font-size:23px}.tutor-side-prev{left:-8px}.tutor-side-next{right:-8px}.tutor-carousel-bar{grid-template-columns:1fr auto}}
