@@ -1,0 +1,47 @@
+/* Tutors, recent recognition and gratitude share the site's parchment and bronze palette. */
+.tutor-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.tutor-filters button{font:500 15px/1.5 var(--sans);padding:11px 20px;background:transparent;border:1px solid #bba17b;color:#60472e;border-radius:2px;cursor:pointer}
+.tutor-filters button[aria-pressed=true]{background:#493427;color:#fff1db;border-color:#493427}
+.tutor-filters button:focus-visible,.people-photo:focus-visible{outline:2px solid #9b733a;outline-offset:5px}
+.contemporary .faculty-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:42px 30px;align-items:start}
+.contemporary .faculty-card{min-width:0;border:1px solid #b697694d;background:#fcf8eea8;padding:0}
+.tutor-portrait{height:320px;overflow:hidden;background:#e6dcc9}
+.tutor-portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.tutor-copy{padding:25px 24px 28px}
+.contemporary .faculty-card h3{font:500 clamp(29px,2.7vw,36px)/1.12 var(--serif);letter-spacing:-.5px;margin:12px 0;color:#493323}
+.contemporary .faculty-subject{font:600 12px/1.6 var(--sans);letter-spacing:1.1px;text-transform:uppercase;color:#856238}
+.tutor-experience{display:block;font:500 14px/1.6 var(--sans);color:#7d5734;margin:13px 0 17px}
+.contemporary .faculty-card p{font:400 17px/1.8 var(--sans);color:#695847;margin:0}
+.tutor-details{margin-top:22px;border-top:1px solid #bea37d66;padding-top:16px}
+.tutor-details summary{cursor:pointer;font:500 15px/1.6 var(--sans);color:#6d442a}
+.tutor-details ul{padding-left:18px;margin:14px 0 0}
+.tutor-details li{font:400 15px/1.75 var(--sans);color:#695847;margin-top:9px}
+.contemporary .recognition{display:grid;grid-template-columns:.9fr 1.1fr;gap:7%;align-items:center;padding-block:85px;border-block:1px solid #bea37d66}
+.recognition-story h2{margin-bottom:30px}
+.recognition-category{display:inline-block;font:600 12px/1.5 var(--sans);letter-spacing:2px;border-block:1px solid #bba17b;padding-block:8px;color:#886339}
+.recognition-story h3{font:500 clamp(28px,3vw,40px)/1.18 var(--serif);margin:22px 0 20px;color:#493323}
+.recognition-story>p:not(.eyebrow){font:400 18px/1.9 var(--sans);color:#695847;max-width:510px}
+.recognition-story .text-link{margin-top:28px}
+.recognition-photos{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:stretch}
+.people-photo{position:relative;display:block;min-width:0;width:100%;border:1px solid #b99b6c;background:#e7ddc9;padding:5px;cursor:zoom-in;overflow:hidden}
+.people-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.recognition-main{aspect-ratio:.7}
+.recognition-pair{display:grid;grid-template-rows:1fr 1fr;gap:14px;min-height:0}
+.recognition-pair .people-photo img{object-fit:contain}
+.people-photo>span{position:absolute;bottom:10px;right:10px;width:30px;height:30px;display:grid;place-items:center;background:#342217df;color:#f4deaf;font-size:20px}
+.contemporary .gratitude{display:grid;grid-template-columns:.9fr 1.1fr;gap:7%;padding-block:95px}
+.gratitude-intro>p:not(.eyebrow){font:400 18px/1.85 var(--sans);color:#695847;max-width:410px;margin-top:24px}
+.guru-groups article{border-top:1px solid #bba17b;padding-top:20px}
+.guru-groups article+article{margin-top:35px}
+.guru-discipline{font:600 12px/1.6 var(--sans);letter-spacing:1.5px;color:#8d683d}
+.guru-groups ul{list-style:none;padding:0;margin:20px 0 0}
+.guru-groups li{font:500 clamp(24px,2.5vw,32px)/1.25 var(--serif);color:#493323;padding:0 0 19px}
+.guru-groups li small{display:block;font:400 14px/1.65 var(--sans);color:#8a7257;margin-top:7px}
+#people-photo-dialog{width:min(1000px,94vw);max-height:94dvh;padding:18px;background:#21170f;border:1px solid #b99b6c;color:#f6e8ce}
+#people-photo-dialog::backdrop{background:#100907d9;backdrop-filter:blur(4px)}
+#people-photo-dialog>img{display:block;max-height:78dvh;width:100%;object-fit:contain}
+#people-photo-dialog>p{font:400 16px/1.6 var(--sans);text-align:center;padding:14px 40px 0}
+.people-photo-close{position:absolute;right:10px;top:10px;width:42px;height:42px;border:1px solid #b99b6c;border-radius:50%;background:#21170f;color:#f6e8ce;font-size:27px;cursor:pointer}
+body:has(#people-photo-dialog[open]){overflow:hidden}
+@media(min-width:701px) and (max-width:1050px){.contemporary .faculty-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tutor-portrait{height:300px}}
+@media(max-width:700px){.contemporary .faculty-grid{grid-template-columns:1fr;gap:28px}.tutor-portrait{height:350px}.tutor-copy{padding:24px}.contemporary .faculty-card h3{font-size:34px}.contemporary .faculty-card p{font-size:17px}.contemporary .recognition,.contemporary .gratitude{grid-template-columns:1fr;gap:35px;padding-block:60px}.recognition-photos{gap:10px}.recognition-pair{gap:10px}.recognition-story h3{font-size:34px}.recognition-story>p:not(.eyebrow),.gratitude-intro>p:not(.eyebrow){font-size:17px}.guru-groups li{font-size:28px}.tutor-filters{gap:8px}.tutor-filters button{padding:10px 13px;font-size:14px}}
