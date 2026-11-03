@@ -201,3 +201,15 @@ body:has(#people-photo-dialog[open]){overflow:hidden}
 .recognition::before,.recognition::after{background:#3b291e;color:#d6b577}
 .recognition .people-photo{background:#4c3727;border-color:#b7965e}
 @media(max-width:700px){.tutor-highlights li{font-size:16px}}
+
+/* Bespoke still life: veena, ghungroo, jasmine and a brass diya. */
+.contemporary .gratitude{background-color:#352217;background-image:linear-gradient(180deg,#160c0845,#160c081f 48%,#160c0840),url('assets/people/gratitude-still-life-v1.webp');background-position:center;background-size:cover;padding:65px 65px 145px}
+.gratitude .gratitude-intro{position:relative;max-width:650px;padding:14px 12px 24px;margin-bottom:28px}
+.gratitude .gratitude-motif{display:none}
+.contemporary .gratitude .eyebrow{display:inline-block;background:#2a1a10c9;border:1px solid #d5b67f66;padding:8px 14px;letter-spacing:2.5px}
+.contemporary .gratitude #gratitude-title{color:#fff4df;text-shadow:0 2px 15px #10070355}
+.contemporary .gratitude #gratitude-title em{color:#edcf95}
+.contemporary .gratitude-intro>p:not(.eyebrow){color:#f3e2c8;text-shadow:0 1px 8px #10070388}
+.gratitude .guru-groups{max-width:900px;margin-inline:auto;gap:25px}
+.gratitude .guru-groups article{background:linear-gradient(135deg,#f5e9d1f5,#fff7e8f7);box-shadow:0 14px 32px #150a0730}
+@media(max-width:700px){.contemporary .gratitude{padding:40px 23px 90px;background-size:auto 720px;background-repeat:no-repeat;background-position:top center}.gratitude .gratitude-intro{padding:8px 0 20px;margin-bottom:25px}.contemporary .gratitude #gratitude-title{font-size:40px}.gratitude .guru-groups{gap:22px}}
