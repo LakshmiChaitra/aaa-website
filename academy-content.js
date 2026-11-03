@@ -42,7 +42,7 @@ window.AAA_CONTENT = {
     "experience": "8+ years in dance",
     "photo": "assets/people/roohith-rapaka.webp",
     "position": "42% 34%",
-    "zoom": 1.8,
+    "zoom": 1.4,
     "bio": "A dance instructor, choreographer and performer, Roohith brings energy and creativity to every session. His experience spans Hip-Hop, Bollywood, Western, Folk, Freestyle, Zumba and Aerobics, with a focus on rhythm, coordination and confidence.",
     "highlights": [
       "District-level dance competition winner, 2017; second prize, 2015.",
@@ -70,7 +70,7 @@ window.AAA_CONTENT = {
     "experience": "Certified yoga & therapeutic yoga trainer",
     "photo": "assets/people/spoorthi-veluri.webp",
     "position": "48% 44%",
-    "zoom": 1.6,
+    "zoom": 1.4,
     "bio": "Spoorthi combines mindful movement, breathwork, meditation and relaxation in sessions tailored to different ages and fitness levels. Her experience includes group classes, individual sessions, women’s wellness, children’s yoga and community workshops.",
     "highlights": [
       "200-hour Yoga Teacher Training and Therapeutic Yoga Teacher Training.",

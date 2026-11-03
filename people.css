@@ -45,3 +45,63 @@
 body:has(#people-photo-dialog[open]){overflow:hidden}
 @media(min-width:701px) and (max-width:1050px){.contemporary .faculty-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tutor-portrait{height:300px}}
 @media(max-width:700px){.contemporary .faculty-grid{grid-template-columns:1fr;gap:28px}.tutor-portrait{height:350px}.tutor-copy{padding:24px}.contemporary .faculty-card h3{font-size:34px}.contemporary .faculty-card p{font-size:17px}.contemporary .recognition,.contemporary .gratitude{grid-template-columns:1fr;gap:35px;padding-block:60px}.recognition-photos{gap:10px}.recognition-pair{gap:10px}.recognition-story h3{font-size:34px}.recognition-story>p:not(.eyebrow),.gratitude-intro>p:not(.eyebrow){font-size:17px}.guru-groups li{font-size:28px}.tutor-filters{gap:8px}.tutor-filters button{padding:10px 13px;font-size:14px}}
+/* A framed feature for the academy's recent honour. */
+.contemporary .recognition{position:relative;border:1px solid #a5824e;outline:1px solid #b99b6c66;outline-offset:-10px;padding:64px 48px;margin-block:35px 75px;background:linear-gradient(120deg,#f5ebd7bb,#fffaf0aa);box-shadow:0 14px 40px #46321d0b;gap:6%}
+.recognition::before,.recognition::after{content:"✥";position:absolute;width:30px;height:30px;display:grid;place-items:center;background:#f6f0e2;color:#a5824e;font-size:24px;line-height:1;pointer-events:none}
+.recognition::before{left:-15px;top:-15px}.recognition::after{right:-15px;bottom:-15px}
+/* One continuous window; touch scrolling and keyboard navigation stay native. */
+.tutor-window{overflow:hidden;padding:5px 0}
+.contemporary .faculty-grid.tutor-track{display:flex;gap:28px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 18px;align-items:stretch}
+.tutor-track::-webkit-scrollbar{display:none}
+.contemporary .tutor-track .faculty-card{flex:0 0 calc((100% - 28px)/2);scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box;display:flex;flex-direction:column}
+.tutor-track .tutor-portrait{height:340px;flex:none}
+.tutor-track .tutor-copy{padding:28px 30px 30px}
+.tutor-carousel-bar{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #bba17b77;padding-top:20px;gap:15px}
+.tutor-carousel-bar>p{font:400 15px/1.6 var(--sans);color:#8a7154}
+.tutor-carousel-controls{display:flex;align-items:center;gap:20px}
+.tutor-carousel-controls button{width:48px;height:48px;border:1px solid #a5824e;border-radius:50%;background:transparent;color:#61442a;font-size:24px;cursor:pointer}
+.tutor-carousel-controls button:hover:not(:disabled){background:#493427;color:#fff0d7}
+.tutor-carousel-controls button:disabled{opacity:.3;cursor:default}
+.tutor-carousel-controls span{font:500 13px/1.5 var(--sans);color:#745736;font-variant-numeric:tabular-nums;min-width:80px;text-align:center}
+.tutor-track:focus-visible,.tutor-carousel-controls button:focus-visible{outline:2px solid #9b733a;outline-offset:3px}
+.contemporary .founder-tutor-card{border-color:#a5824e;background:#f4e9d5}
+.founder-tutor-card .faculty-subject{color:#75451f}
+/* The founder receives a distinct bronze-and-gold portrait feature. */
+.contemporary #founder{position:relative;background:radial-gradient(ellipse at 15% 30%,#68462c55,transparent 65%),#2a1e16;color:#f8edda;border:1px solid #a5824e;outline:1px solid #ad8c5744;outline-offset:-12px;padding:65px 50px;gap:7%;margin-block:65px;scroll-margin-top:100px}
+#founder.heritage-frame::before,#founder.heritage-frame::after{display:none}
+.contemporary #founder .founder-photo{background:#32251a;border-color:#c6a367;outline-color:#c6a36755;padding:14px}
+.contemporary #founder .photo-arch{background:#3c2a1e}
+.contemporary #founder .founder-portrait-label{color:#ead7af;font-size:13px;letter-spacing:2px}
+.contemporary #founder .founder-portrait-label>span{color:#ba9b69;font-size:10px}
+.contemporary #founder .founder-seal{display:inline-block;font:500 12px/1.5 var(--sans);letter-spacing:2px;color:#e1c18a;border:1px solid #b3935e77;padding:9px 15px;margin-bottom:24px}
+.contemporary #founder #founder-title{color:#fff1d7;font-size:clamp(48px,5vw,70px)}
+.contemporary #founder .founder-heading-note{font-size:30px;color:#d8b982;margin-top:20px}
+.contemporary #founder .founder-heading-note em{color:#d8b982}
+.contemporary #founder .founder-role{color:#c8ac7e;font-size:11px;line-height:1.8}
+.contemporary #founder .founder-copy>p:not(.eyebrow){font-size:18px;color:#dfd0b9;line-height:1.85}
+.contemporary #founder .qualifications{border-color:#b5986555}
+.contemporary #founder .qualifications strong{color:#e8c88b;font-size:32px}
+.contemporary #founder .qualifications span{color:#c8b89e;font-size:14px}
+.contemporary #founder .founder-details{border-color:#b5986555}
+.contemporary #founder .founder-details summary{color:#e8d4b1;font-size:16px}
+.contemporary #founder .founder-details li,.contemporary #founder .founder-details p{color:#dfd0b9;font-size:16px}
+#teachers,#recognition,#gratitude{scroll-margin-top:100px}
+@media(max-width:700px){
+ .contemporary .tutor-track .faculty-card{flex-basis:calc(100% - 18px)}
+ .contemporary .faculty-grid.tutor-track{gap:18px}
+ .tutor-track .tutor-portrait{height:315px}.tutor-track .tutor-copy{padding:24px}
+ .tutor-carousel-bar{align-items:flex-start;flex-direction:column;gap:14px}.tutor-carousel-controls{align-self:flex-end;gap:15px}
+ .contemporary .recognition{padding:42px 24px;margin-block:25px 55px;gap:28px}
+ .recognition::before,.recognition::after{font-size:20px;width:24px;height:24px}.recognition::before{left:-12px;top:-12px}.recognition::after{right:-12px;bottom:-12px}
+ .contemporary #founder{padding:44px 24px;gap:35px;margin-block:45px;outline-offset:-8px}
+ .contemporary #founder .founder-photo{width:100%;max-width:330px;box-sizing:border-box}
+ .contemporary #founder #founder-title{font-size:48px}.contemporary #founder .founder-heading-note{font-size:27px}
+ .contemporary #founder .founder-copy>p:not(.eyebrow){font-size:17px}.contemporary #founder .qualifications{gap:20px}
+ .contemporary #founder .qualifications strong{font-size:27px}
+}
+
+/* Keep the full classical costume visible and controls clear of the event invitation. */
+.tutor-track .tutor-portrait:has(img[alt*="Kuchipudi"]){background:#100c08}
+.tutor-track .tutor-portrait img[alt*="Kuchipudi"]{object-fit:contain}
+.tutor-carousel-controls{margin-right:110px}
+@media(max-width:700px){.tutor-carousel-controls{margin-right:60px}}
