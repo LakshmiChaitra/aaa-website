@@ -141,3 +141,22 @@ body:has(#people-photo-dialog[open]){overflow:hidden}
  .tutor-dots button{width:25px}
 }
 @media(prefers-reduced-motion:reduce){.tutor-dots button::before{transition:none}}
+
+/* Larger tutor feature and portrait. */
+.tutor-window{max-width:1180px;padding-inline:2px}
+.contemporary .tutor-track .faculty-card{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);min-height:550px;padding:30px;gap:38px}
+.tutor-track .tutor-portrait{height:470px;border-radius:210px 210px 20px 20px}
+.contemporary .tutor-track .faculty-card h3{font-size:clamp(40px,4.5vw,56px)}
+.contemporary .tutor-track .faculty-card p{font-size:20px;line-height:1.8}
+.tutor-track .faculty-subject{font-size:14px}
+.tutor-track .tutor-experience{font-size:17px}
+.tutor-track .tutor-details summary{font-size:17px}
+.tutor-carousel-bar{max-width:1170px}
+@media(max-width:700px){
+ .contemporary .tutor-track .faculty-card{grid-template-columns:1fr;min-height:0;padding:25px 23px 30px;gap:18px}
+ .tutor-track .tutor-portrait{width:calc(100% - 8px);max-width:320px;height:320px;border-radius:165px 165px 16px 16px}
+ .contemporary .tutor-track .faculty-card h3{font-size:38px}
+ .contemporary .tutor-track .faculty-card p{font-size:18px}
+ .tutor-track .faculty-subject{font-size:12px}
+ .tutor-track .tutor-experience{font-size:16px}
+}
