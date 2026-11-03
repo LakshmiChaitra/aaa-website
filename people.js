@@ -32,7 +32,7 @@
    copy.append(text('span',person.subject,'faculty-subject'),text('h3',person.name));
    if(person.experience)copy.append(text('span',person.experience,'tutor-experience'));
    copy.append(text('p',person.bio));
-   if(person.highlights?.length){const details=document.createElement('details');details.className='tutor-details';details.append(text('summary','Training & highlights'));const ul=document.createElement('ul');for(const line of person.highlights)ul.append(text('li',line));details.append(ul);copy.append(details);}
+   if(person.highlights?.length){const details=document.createElement('section');details.className='tutor-details tutor-highlights';details.setAttribute('aria-label','Training and highlights');details.append(text('h4','Training & highlights'));const ul=document.createElement('ul');for(const line of person.highlights)ul.append(text('li',line));details.append(ul);copy.append(details);}
    card.append(copy);grid.append(card);
    const index=grid.children.length-1;card.setAttribute('role','group');card.setAttribute('aria-roledescription','slide');card.setAttribute('aria-label',person.name+' · '+person.subject);
    const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label','Show '+person.name+' · '+person.subject);dot.addEventListener('click',()=>goTo(index));dots.append(dot);

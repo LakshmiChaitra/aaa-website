@@ -1,13 +1,14 @@
 (() => {
  const weekdays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
  const schedule = [
-  {name:'Yoga',kind:'wellbeing',label:'THREE MORNING BATCHES',days:{0:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.',1:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.',2:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.',3:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.',4:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.'}},
+  {name:'Yoga',kind:'wellbeing',label:'ONLINE & OFFLINE · 3 BATCHES',days:{0:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.',1:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.',2:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.',3:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.',4:'6–7 a.m. / 7–8 a.m. / 8–9 a.m.'}},
   {name:'Carnatic music',kind:'music',days:{0:'5–6 p.m.',2:'5–6 p.m.',5:'11 a.m.–12 noon'}},
   {name:'Kuchipudi dance',kind:'dance',days:{0:'6–7 p.m.',2:'6–7 p.m.',5:'12 noon–1 p.m.'}},
   {name:'Shloka classes',kind:'music',days:{4:'4:30–5:30 p.m.',5:'10:30–11 a.m.'}},
   {name:'Western dance',kind:'dance',days:{1:'5–6 p.m.',3:'5–6 p.m.',5:'5:45–7 p.m.'}},
   {name:'Art classes',kind:'art',days:{0:'5–6 p.m.',2:'5–6 p.m.'}},
-  {name:'Zumba fitness',kind:'wellbeing',label:'ADULTS · FLEXIBLE',days:{1:'6–7 p.m.',3:'6–7 p.m.',5:'6–7 p.m.'}},
+  {name:'Zumba fitness',kind:'wellbeing',label:'ADULTS · STARTING SOON',days:{1:'6:30–7:30 p.m.',3:'6:30–7:30 p.m.',4:'6:30–7:30 p.m.'}},
+  {name:'Keyboard classes',kind:'music',label:'STARTING SOON',days:{0:'6–7 p.m.',2:'6–7 p.m.'}},
   {name:'Sankeertanas workshop',kind:'workshop',label:'BASED ON ENROLMENTS',days:{0:'10:30 a.m.–12 noon',1:'10:30 a.m.–12 noon',2:'10:30 a.m.–12 noon',3:'10:30 a.m.–12 noon'}},
   {name:'Music / dance / art workshops',kind:'workshop',label:'BASED ON ENROLMENTS',days:{6:'Dates & timings on enquiry'}}
  ];
