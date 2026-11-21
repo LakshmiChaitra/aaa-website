@@ -1,0 +1,5 @@
+.website-views{margin:24px 0 0;padding:18px 0 0;border-top:1px solid #c2b39666;text-align:center;font-size:12px;letter-spacing:.08em;color:var(--muted,#685b50)}
+.website-views span{font-variant-numeric:tabular-nums;color:var(--brass,#80653c)}
+#reg-mode-help{display:block;font-size:12px;line-height:1.6;color:#685b50;margin-top:6px}
+
+#registration-google-review{margin:24px 0}#registration-google-review iframe{display:block;width:100%;height:1180px;margin:20px 0;border:1px solid #b59b6c66;border-radius:8px;background:#fff}#registration-google-review p{font-size:14px;line-height:1.7}#registration-google-review .text-link{font-size:13px} .registration-demo-note{line-height:1.7}
