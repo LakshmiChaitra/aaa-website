@@ -45,20 +45,14 @@ def counter(increment):
     return total
 
 
-FORM_ID = '1FAIpQLSf-mhBQZGbPAGzTXwV7SQCUErcMD8CwWAtFKvDDukhtHkk1Sg'
-ACTIVITIES = {
-    'Carnatic music': '1. Carnatic Music (Kids & Adults)',
-    'Sankeertanas workshop': '2.Sankeertanas (Adults)',
-    'Kuchipudi dance': '3. Kuchipudi Dance',
-    'Western dance': '4. Western dance (Kids)',
-    'Zumba fitness': '5. Zumba Dance (Adults)',
-    'Art classes': '6. Art Activities  (Drawing, Sketching, Painting, craft activities etc.,)',
-    'Yoga': '7. Yoga (Kids & Adults)',
-    'Shloka classes': '8. Bhagawadgeeta shlokas & Nitya prarthana (Kids)',
+FORM_ID = '1FAIpQLSdnGrdu2G7vTg28E5qX1JStqjQ8CDTnI5-vMrr5PjjruCpgKg'
+REGISTRATION_COURSES = {
+    'Carnatic music', 'Kuchipudi dance', 'Shloka classes', 'Western dance',
+    'Art classes', 'Yoga', 'Zumba fitness', 'Keyboard classes',
+    'Martial arts & self-defence', 'Handwriting classes', 'Public speaking skills',
+    'Sankeertanas workshop', 'Sunday music workshop', 'Sunday dance workshop',
+    'Sunday art workshop',
 }
-OTHER_ACTIVITIES = {'Keyboard classes', 'Martial arts & self-defence', 'Handwriting classes',
-                    'Public speaking skills', 'Sunday music workshop', 'Sunday dance workshop',
-                    'Sunday art workshop'}
 
 
 def registration_data(raw):
@@ -79,7 +73,7 @@ def registration_data(raw):
         raise ValueError('Enter a valid age')
     if not re.fullmatch(r'[+0-9 ()-]{10,20}', result['phone']) or not 10 <= len(re.sub(r'\D', '', result['phone'])) <= 15:
         raise ValueError('Enter a valid contact number')
-    if result['course'] not in ACTIVITIES and result['course'] not in OTHER_ACTIVITIES:
+    if result['course'] not in REGISTRATION_COURSES:
         raise ValueError('Choose a class or workshop')
     modes = {'Online', 'Offline'} if result['course'] in {'Carnatic music', 'Yoga'} else {'Offline'}
     if result['learningMode'] not in modes:
@@ -91,10 +85,10 @@ def registration_data(raw):
 
 def submit_google_registration(data, reference):
     fields = {
-        'entry.1899802182': data['studentName'], 'entry.1446880981': data['age'],
-        'entry.1537575661': data['phone'], 'entry.557513989': data['address'],
-        'entry.459943467': ACTIVITIES.get(data['course'], '__other_option__'),
-        'entry.1109204689': '\n'.join(filter(None, [
+        'entry.351942244': data['studentName'], 'entry.1054744038': data['age'],
+        'entry.215957962': data['phone'], 'entry.1676087060': data['address'],
+        'entry.68124289': data['course'], 'entry.984631157': data['learningMode'],
+        'entry.2022916799': '\n'.join(filter(None, [
             f'Registration reference: {reference}', f'Class / workshop: {data["course"]}',
             f'Learning mode: {data["learningMode"]}',
             data['guardianName'] and f'Parent / guardian: {data["guardianName"]}',
@@ -103,8 +97,6 @@ def submit_google_registration(data, reference):
         ])),
         'pageHistory': '0', 'submit': 'Submit',
     }
-    if data['course'] not in ACTIVITIES:
-        fields['entry.459943467.other_option_response'] = data['course']
     operation = Request(f'https://docs.google.com/forms/d/e/{FORM_ID}/formResponse?hl=en',
                         data=urlencode(fields).encode(), method='POST',
                         headers={'Content-Type': 'application/x-www-form-urlencoded'})

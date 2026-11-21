@@ -50,21 +50,23 @@ class RegistrationTests(unittest.TestCase):
             self.assertEqual(result.status_code, 200)
             self.assertTrue(result.json['ok'])
             fields = parse_qs(google.call_args.args[0].data.decode())
-            self.assertEqual(fields['entry.557513989'], ['Test address'])
-            self.assertEqual(fields['entry.459943467'], ['7. Yoga (Kids & Adults)'])
-            self.assertIn('Learning mode: Online', fields['entry.1109204689'][0])
+            self.assertEqual(fields['entry.1676087060'], ['Test address'])
+            self.assertEqual(fields['entry.68124289'], ['Yoga'])
+            self.assertEqual(fields['entry.984631157'], ['Online'])
+            self.assertIn(site.FORM_ID, google.call_args.args[0].full_url)
+            self.assertIn('Learning mode: Online', fields['entry.2022916799'][0])
             self.assertEqual(self.post().json, result.json)
             google.assert_called_once()
             self.assertEqual(self.post(studentName='Different learner').status_code, 409)
         self.assertNotIn('Test address', str(self.store))
         self.assertNotIn('0000000000', str(self.store))
 
-    def test_keyboard_uses_other_option(self):
+    def test_keyboard_saves_its_own_course_and_learning_mode(self):
         with patch.object(site, 'redis_command', side_effect=self.redis), patch.object(site, 'urlopen', return_value=BytesIO(b'<div class="vHW8K">Your response has been recorded.</div>')) as google:
             self.assertEqual(self.post(course='Keyboard classes', learningMode='Offline').status_code, 200)
             fields = parse_qs(google.call_args.args[0].data.decode())
-            self.assertEqual(fields['entry.459943467'], ['__other_option__'])
-            self.assertEqual(fields['entry.459943467.other_option_response'], ['Keyboard classes'])
+            self.assertEqual(fields['entry.68124289'], ['Keyboard classes'])
+            self.assertEqual(fields['entry.984631157'], ['Offline'])
 
     def test_unknown_response_is_not_success_or_retried(self):
         for body in (b'<script>"Your response has been recorded."</script>', b'<p>Form is closed</p>'):
