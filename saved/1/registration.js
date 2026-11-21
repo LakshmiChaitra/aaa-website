@@ -1,6 +1,21 @@
 (() => {
  const form = document.querySelector('#academy-registration');
  if (!form) return;
+ // Downloaded HTML cannot call the website's server endpoints.
+ if (location.protocol === 'file:') {
+  form.hidden = true;
+  const notice = document.createElement('div');
+  notice.className = 'registration-offline-notice';
+  const message = document.createElement('p');
+  message.textContent = 'You’re viewing a downloaded preview. Open the live website to register and save your details.';
+  const live = document.createElement('a');
+  live.className = 'button registration-submit';
+  live.href = 'https://anusha-art-academy.onrender.com/#registration';
+  live.textContent = 'Open live registration ↗';
+  notice.append(message,live);
+  form.before(notice);
+  return;
+ }
  const receipt = document.querySelector('#registration-receipt');
  form.after(receipt);
  new IntersectionObserver(entries=>{
@@ -68,7 +83,8 @@
   const error = document.querySelector('#registration-error'); error.hidden = true;
   submitting = true;
   const button = form.querySelector('[type="submit"]'); button.disabled = true; submitLabel.textContent = 'Submitting…';
-  const controller = new AbortController(); const timeout = setTimeout(()=>controller.abort(),45000);
+  // Render Free may need about a minute to wake after inactivity.
+  const controller = new AbortController(); const timeout = setTimeout(()=>controller.abort(),120000);
   try {
    const target = new URL(endpoint,location.href);
    if (target.protocol !== 'https:' && target.origin !== location.origin) throw new Error('Registration connection is unavailable.');
