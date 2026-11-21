@@ -1,4 +1,11 @@
 .registration-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+#academy-registration[hidden]{display:none}
+body.registration-reading .upcoming-invitation,body.registration-reading .quick-contact{visibility:hidden;pointer-events:none}
+.registration-form-wrap>.registration-receipt{margin-top:0;padding:0;background:transparent;border:0}
+.registration-only .registration-receipt h3,.registration-only .registration-receipt dd{color:#f0e4d1}
+.registration-only .registration-receipt>p:not(.eyebrow),.registration-only .registration-receipt-next p,.registration-only .registration-receipt dt{color:#c9b99c}
+.registration-only .registration-receipt dl>div{grid-template-columns:minmax(0,1fr);gap:4px;border-color:#a38c663f}
+.registration-only .registration-edit{color:#ddbf87}
 .registration-intro{font:400 34px/1.2 var(--serif);color:var(--ink);margin:0 0 30px}.registration-intro em{color:var(--brass)}
 .registration-guide .registration-steps{grid-template-columns:1fr;gap:23px}
 .registration-guide .registration-steps li{display:grid;grid-template-columns:22px 1fr;gap:8px 15px;padding-top:20px}

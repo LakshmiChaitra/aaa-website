@@ -1,27 +1,16 @@
-# Anusha Art Academy — recovered preview
+# Anusha Art Academy
 
-Recovered on 20 November 2026 from the GitHub backup LakshmiChaitra/aaa-website (main, last pushed 3 November). Later changes from the current chat were reapplied: active Keyboard/Zumba timings, Keyboard in the kids filter, online/offline registration choices, Google Form review/submission, footer eye/count, public Doc events, newest-first Slides album, four desktop columns and twelve-photo preview. The older backup lacked later visual refinements; the kids styling and missing course icons were reconstructed. Review the screenshots and browser previews before deployment.
+Live website: https://anusha-art-academy.onrender.com/
+Phone preview: https://anusha-art-academy.onrender.com/phone-preview.html
 
-Start from this folder: `python3 preview_server.py`.
+Render Free deploys the `codex/deploy-academy-render` branch of LakshmiChaitra/aaa-website. Build: `pip install -r requirements.txt`. Start: `gunicorn production_app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 30 --access-logfile -`. Health check: `/healthz`.
 
-Desktop: http://127.0.0.1:4187/saved/1/
-Phone: http://127.0.0.1:4187/phone-preview.html
+Set `PYTHON_VERSION=3.13.5`, `UPSTASH_REDIS_REST_URL`, and `UPSTASH_REDIS_REST_TOKEN` in Render only. Both hosting and Redis use Free plans. The counter is durable; the service sleeps when idle.
 
-Registration responses use the academy Google Form. Linking and organizing the owner's Google Sheet is pending owner access. No test responses have been submitted. Videos remain unconfigured.
+Registration uses one styled form and `/api/registrations`. The server validates required fields and available learning modes, maps all details to the academy Google Form, and only returns success after Google displays its recorded-response confirmation. Google receives address, class, online/offline mode, guardian and batch notes. A reference is included in the response notes. Redis stores only a temporary reference, payload hash and status for retry protection, with no learner details. An uncertain submission is not resent automatically. Google Sheets response linking still needs the owner's access.
 
-This server binds only to localhost. Hosting must provide the /api/views and /api/album-image routes with persistent view-count storage; uploading only the HTML will not reproduce those features. The view database remains outside the served folder at ../tmp/academy-views.sqlite3. Google Doc and Slides must be publicly readable.
+The Google Forms web submission endpoint is not a versioned API; if the form fields, confirmation message, access or submission behavior change, recheck the integration. A rejected or unconfirmed response shows an error instead of success. Unit tests: `python3 -m unittest discover -s tests -v`.
 
+Album slides load newest first with the original collection retained, four desktop columns and a 12-photo preview. Upcoming events load from the public Google Doc. Carnatic Music and Yoga support online/offline selection. Phone timetables rotate 90 degrees and fit the viewport. Video sources remain pending.
 
-## Free deployment preparation — 21 November 2026
-
-`render.yaml` selects Render's Free Python web service, builds `requirements.txt`, and starts the Flask app with Gunicorn. `production_app.py` serves the site and the Slides image route. The view counter uses an atomic Redis INCR command through Upstash REST, avoiding Render's ephemeral filesystem. Create an Upstash database on its Free plan and configure `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` privately in Render; do not put the token into browser code or Git. Health checks return 503 until those variables exist. Counter requests report unavailable on connection failures, without displaying invented counts.
-
-Production setup is prepared and tested with a mocked counter store; it has not been deployed or connected to a live Upstash store. Render sign-in and repository authorization are pending. Free Render services sleep when idle and have usage limits. Keep both provider accounts on their free plans; no paid service has been created. Registration is still completed in Google Forms, with its owner-side Sheet connection pending.
-
-The phone timetable is transposed: days are rows and classes are columns. Desktop retains the original layout. The footer FAQ shortcut is replaced by the eye/count in the same row. The Upcoming Events logo, title and document text fit the inner parchment border.
-
-Latest phone layout: horizontal weekly table restored at user request; classes are rows, weekdays are columns. Footer FAQ shortcut remains replaced by eye/count.
-
-Latest timetable preference: on phones, the actual table is rotated 90 degrees clockwise and scaled to fit the content width. Desktop remains unrotated.
-
-Phone timetable fit: rotated view now scales against both available screen width and height below the navigation. Compact Sunday labels retain an enrolment footnote; full desktop labels are unchanged.
+Run the production app locally with `python3 -m flask --app production_app run --port 4188`. Without Redis credentials, submissions are safely unavailable. The older `preview_server.py` previews static content and local view counts; it does not handle registration submissions.
