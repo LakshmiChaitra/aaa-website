@@ -19,6 +19,30 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)
 
 
+def trusted_origin(origin):
+    if not origin:
+        return False
+    parts = urlsplit(origin)
+    if parts.scheme not in {'https', 'http'} or parts.path or parts.query or parts.fragment or parts.username:
+        return False
+    if parts.netloc == request.host and parts.scheme == request.scheme:
+        return True
+    # Exact public site origins only; never reflect arbitrary origins or credentials.
+    allowed = {item.strip().rstrip('/') for item in os.environ.get('PUBLIC_SITE_ORIGINS', '').split(',') if item.strip()}
+    return parts.scheme == 'https' and origin in allowed
+
+
+@app.after_request
+def public_site_access(response):
+    origin = request.headers.get('Origin')
+    if (request.path.startswith('/api/') or request.path == '/healthz') and trusted_origin(origin):
+        response.headers['Access-Control-Allow-Origin'] = origin
+        response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+        response.headers.add('Vary', 'Origin')
+    return response
+
+
 def redis_command(command):
     endpoint = os.environ.get('UPSTASH_REDIS_REST_URL', '').rstrip('/')
     token = os.environ.get('UPSTASH_REDIS_REST_TOKEN', '')
@@ -136,7 +160,7 @@ class GoogleConfirmation(HTMLParser):
 def registrations():
     headers = {'Cache-Control': 'no-store'}
     origin = request.headers.get('Origin')
-    if not origin or urlsplit(origin).netloc != request.host:
+    if not trusted_origin(origin):
         return jsonify(error='Submit from the academy website'), 403, headers
     if not request.is_json:
         return jsonify(error='Invalid registration'), 415, headers
@@ -184,7 +208,7 @@ def health():
 @app.route('/api/views', methods=['GET', 'POST'])
 def views():
     origin = request.headers.get('Origin')
-    if request.method == 'POST' and origin and urlsplit(origin).netloc != request.host:
+    if request.method == 'POST' and origin and not trusted_origin(origin):
         abort(403)
     try:
         return jsonify(views=counter(request.method == 'POST')), 200, {'Cache-Control': 'no-store'}

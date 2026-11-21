@@ -1,9 +1,13 @@
-// One player, many stories. Empty sources remain clearly labelled placeholders.
+// Show only published videos; the section returns when real sources are supplied.
+const publishedFilms=ACADEMY_VIDEOS.filter(film=>film.src);
+document.querySelector('#films').hidden=!publishedFilms.length;
 const filmList=document.querySelector('#film-list'),video=document.querySelector('#academy-video'),embed=document.querySelector('#academy-embed');
-filmList.innerHTML=ACADEMY_VIDEOS.map((film,index)=>`<button class="film-choice" type="button" data-film="${index}" aria-pressed="${index===0}"><span class="film-thumb"><img src="${film.poster}" alt="" loading="lazy"><span aria-hidden="true">▷</span></span><span><small>0${index+1} / ${film.category}</small><strong>${film.label}</strong><em>${film.src?'Watch video':'Video to be added'}</em></span><span class="film-choice-arrow" aria-hidden="true">↗</span></button>`).join('');
+document.querySelector('.playlist-title small').textContent=`${String(publishedFilms.length).padStart(2,'0')} STORIES`;
+document.querySelector('.film-note').textContent='Stories from our academy, in sound and movement.';
+filmList.innerHTML=publishedFilms.map((film,index)=>`<button class="film-choice" type="button" data-film="${ACADEMY_VIDEOS.indexOf(film)}" aria-pressed="${index===0}"><span class="film-thumb"><img src="${film.poster}" alt="" loading="lazy"><span aria-hidden="true">▷</span></span><span><small>0${index+1} / ${film.category}</small><strong>${film.label}</strong><em>Watch video</em></span><span class="film-choice-arrow" aria-hidden="true">↗</span></button>`).join('');
 function selectFilm(index){const film=ACADEMY_VIDEOS[index];video.pause();video.removeAttribute('src');video.load();embed.removeAttribute('src');embed.hidden=true;video.hidden=true;const poster=document.querySelector('#film-poster'),placeholder=document.querySelector('#film-placeholder'),wash=document.querySelector('.film-wash');poster.src=film.poster;poster.alt=film.label+' video poster';poster.hidden=Boolean(film.src);placeholder.hidden=Boolean(film.src);wash.hidden=Boolean(film.src);document.querySelector('#film-placeholder-title').textContent=film.label;document.querySelector('#film-category').textContent=film.category;document.querySelector('#film-title').textContent=film.title;document.querySelector('#film-subtitle').textContent=film.subtitle;filmList.querySelectorAll('button').forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));if(film.src){if(film.type==='embed'){embed.src=film.src;embed.hidden=false;}else{video.src=film.src;video.poster=film.poster;video.hidden=false;video.load();}}}
 filmList.addEventListener('click',event=>{const choice=event.target.closest('[data-film]');if(choice)selectFilm(Number(choice.dataset.film));});
-selectFilm(0);
+if(publishedFilms.length)selectFilm(ACADEMY_VIDEOS.indexOf(publishedFilms[0]));
 const albumPhotos=[
  {file:'p13-01',category:'dance',title:'Together on the Shilparamam stage',detail:'Shilparamam programme · January 2026'},
  {file:'p11-01',category:'dance',title:'An academy gathering to remember',detail:'Music and dance · 2025'},

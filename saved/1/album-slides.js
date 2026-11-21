@@ -18,7 +18,7 @@
     const url=new URL(match[1].replace(/^["']|["']$/g,''));
     if(url.origin!=='https://docs.google.com'||!url.pathname.endsWith('/viewpage'))continue;
     if(slides.length===1&&url.searchParams.get('rev')==='2')continue;
-    incoming.push({src:`/api/album-image?url=${encodeURIComponent(url.href)}`,category:'academy',title:`Academy album · ${index+1}`,detail:'From the academy’s photo presentation',fromSlides:true});
+    incoming.push({src:academyAPI(`/api/album-image?url=${encodeURIComponent(url.href)}`),category:'academy',title:`Academy album · ${index+1}`,detail:'From the academy’s photo presentation',fromSlides:true});
    }
    for(let i=albumPhotos.length-1;i>=0;i--)if(albumPhotos[i].fromSlides)albumPhotos.splice(i,1);
    albumPhotos.unshift(...incoming.reverse());

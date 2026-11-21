@@ -34,7 +34,9 @@
   grid.style.transform=`translateX(${height*scale}px) rotate(90deg) scale(${scale})`;
  }
  new ResizeObserver(sizeRotation).observe(table);
- new IntersectionObserver(entries=>{document.body.classList.toggle('timetable-reading',entries[0].isIntersecting&&phone.matches);},{threshold:0.2}).observe(table);
+ const visibleSchedules=new Map();
+ const scheduleObserver=new IntersectionObserver(entries=>{for(const entry of entries)visibleSchedules.set(entry.target,entry.isIntersecting);document.body.classList.toggle('timetable-reading',phone.matches&&[...visibleSchedules.values()].some(Boolean));},{threshold:0.2});
+ scheduleObserver.observe(table);scheduleObserver.observe(agenda);
  document.fonts.ready.then(sizeRotation);
  let selectedDay = 'all';
  const timeCell = value => phone.matches && value === 'Sunday workshop · On enrolment' ? '<span class="schedule-time" aria-label="Sunday workshop, based on enrolments">Workshop*</span>' : value ? `<span class="schedule-time">${value.replaceAll(' / ','<br>')}</span>` : '<span class="schedule-empty" aria-label="No scheduled class">—</span>';
@@ -43,7 +45,7 @@
   if(phone.matches){
    head.innerHTML = '<th scope="col">Your practice</th>'+weekdays.map(day=>`<th scope="col">${day}</th>`).join('');
    body.innerHTML = schedule.map(item=>`<tr><th scope="row"><i class="schedule-dot ${item.kind}" aria-hidden="true"></i><span>${item.name}${item.label?`<small>${item.label}</small>`:''}</span></th>${weekdays.map((_,day)=>`<td>${timeCell(item.days[day])}</td>`).join('')}</tr>`).join('');
-   table.hidden=false;agenda.hidden=true;
+   table.hidden=selectedDay!=='all';agenda.hidden=selectedDay==='all';
    const column=selectedDay==='all'?-1:Number(selectedDay)+1;
    document.querySelectorAll('.week-table tr').forEach(row=>[...row.children].forEach((cell,index)=>cell.classList.toggle('selected-day',index===column)));
 
@@ -56,6 +58,12 @@
     agenda.innerHTML=`<h3>${weekdays[day]} at the academy</h3><div class="day-agenda-grid">${schedule.filter(item=>item.days[day]).map(item=>`<article><i class="schedule-dot ${item.kind}" aria-hidden="true"></i><div><h4>${item.name}</h4><p>${item.days[day].replaceAll(' / ','<br>')}</p>${item.label?`<small>${item.label}</small>`:''}</div></article>`).join('')}</div>`;
    }
   }
+  if(selectedDay!=='all'){
+   const day=Number(selectedDay);
+   const dayItems=day===6?[]:schedule.filter(item=>item.days[day]);
+   agenda.innerHTML=`<h3>${weekdays[day]} at the academy</h3>${day===6?'<p>Sunday music, dance and art workshops run based on enrolments. Contact the academy for the next dates and timings.</p><a class="text-link" href="#registration">Ask about a Sunday workshop ↗</a>':`<div class="day-agenda-grid">${dayItems.map(item=>`<article><i class="schedule-dot ${item.kind}" aria-hidden="true"></i><div><h4>${item.name}</h4><p>${item.days[day].replaceAll(' / ','<br>')}</p><small>${['Yoga','Carnatic music'].includes(item.name)?'ONLINE & OFFLINE':'AT THE ACADEMY'}${item.label?' · '+item.label.replace('ONLINE & OFFLINE · ',''):''}</small></div></article>`).join('')}</div>`}`;
+  }
+  document.querySelector('#timetable-swipe-hint').textContent=selectedDay==='all'?'Turn your phone to read the full timetable, or tap a day for an upright list.':'Timings in IST · choose Full week to return to the complete timetable.';
   sizeRotation();
  }
  document.querySelectorAll('[data-day]').forEach(button=>button.addEventListener('click',()=>{

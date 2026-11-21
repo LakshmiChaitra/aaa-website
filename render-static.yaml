@@ -1,0 +1,12 @@
+# Deploy only after the local preview is approved.
+# Set PUBLIC_SITE_ORIGINS on the existing backend to the new static site's exact origin.
+services:
+  - type: web
+    name: anusha-academy-site
+    runtime: static
+    buildCommand: python3 build_static.py
+    staticPublishPath: dist
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff

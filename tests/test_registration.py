@@ -1,4 +1,5 @@
 import json
+import os
 import unittest
 from io import BytesIO
 from unittest.mock import patch
@@ -86,6 +87,21 @@ class RegistrationTests(unittest.TestCase):
             self.assertEqual(self.post().status_code, 502)
             self.assertEqual(self.post().status_code, 409)
             google.assert_called_once()
+
+    def test_static_site_origin_is_explicit_and_preflight_works(self):
+        with patch.dict(os.environ, {'PUBLIC_SITE_ORIGINS': 'https://academy.example'}):
+            response = self.client.options('/api/registrations', headers={
+                'Origin': 'https://academy.example',
+                'Access-Control-Request-Method': 'POST',
+                'Access-Control-Request-Headers': 'Content-Type',
+            })
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.headers['Access-Control-Allow-Origin'], 'https://academy.example')
+            self.assertNotIn('Access-Control-Allow-Credentials', response.headers)
+            for bad in ['https://academy.example.evil.test', 'null', 'http://academy.example']:
+                response = self.client.post('/api/registrations', json=self.data, headers={'Origin': bad})
+                self.assertEqual(response.status_code, 403)
+                self.assertNotIn('Access-Control-Allow-Origin', response.headers)
 
 
 if __name__ == '__main__':

@@ -69,8 +69,15 @@
   details.replaceChildren();
   const fields = [['Learner',data.studentName],['Age',data.age],['Parent / guardian',data.guardianName],['Contact',data.phone],['Address',data.address],['Class / workshop',data.course],['Learning mode',data.learningMode],['Preferred batch',data.preferredBatch],['Notes',data.message]];
   if (registrationId) fields.unshift(['Registration reference',registrationId]);
+  const followUp=document.querySelector('#registration-followup');
+  followUp.href='https://wa.me/919000129402?text='+encodeURIComponent(`Hello, I have completed my registration on the academy website. My reference is ${registrationId}. Please share the fees and payment instructions for my chosen class.`);
   fields.forEach(([label,value]) => { if (!value) return; const row = document.createElement('div'); const dt = document.createElement('dt'); dt.textContent = label; const dd = document.createElement('dd'); dd.textContent = value; row.append(dt,dd); details.append(row); });
   document.querySelector('#registration-receipt-next').hidden = false;
+  document.querySelector('#registration-receipt-message').textContent='Your registration is saved. Keep your reference. Contact the academy on WhatsApp for fees, payment instructions and final batch confirmation.';
+  if(window.AAA_LOCAL_DEMO){
+   document.querySelector('#registration-receipt-label').textContent='LOCAL DEMO CONFIRMATION';
+   document.querySelector('#registration-receipt-message').textContent='Preview complete. On the live website, this confirms your registration and saves it in the academy’s register. WhatsApp is the next step only for fees and payment details.';
+  }
   form.hidden = true;
   receipt.hidden = false; receipt.focus({preventScroll:true}); receipt.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});
  }
@@ -86,7 +93,7 @@
   // Render Free may need about a minute to wake after inactivity.
   const controller = new AbortController(); const timeout = setTimeout(()=>controller.abort(),120000);
   try {
-   const target = new URL(endpoint,location.href);
+   const target = new URL(endpoint,window.AAA_API_BASE || location.origin);
    if (target.protocol !== 'https:' && target.origin !== location.origin) throw new Error('Registration connection is unavailable.');
    const response = await fetch(target.href,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...data,requestId}),signal:controller.signal,credentials:'omit'});
    const result = await response.json();
