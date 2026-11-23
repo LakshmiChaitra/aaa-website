@@ -6,6 +6,7 @@ window.AAA_CONTENT = {
   googleReviewsUrl: 'https://www.google.com/maps/place/ANUSHA+ART+ACADEMY(AAA)/@17.4629012,78.3463365,17z/data=!4m8!3m7!1s0x3bcb936fd1feccf9:0xb59c8829e8edcb49!8m2!3d17.4629012!4d78.3463365!9m1!1b1!16s%2Fg%2F11yft_d8qh?entry=ttu',
   eventsDocumentUrl: 'https://docs.google.com/document/d/1-cE1KjjwoikvozMxG1G2E74Qb7cBb1uWgJIEY9wIPmY/export?format=txt',
   albumSlidesUrl: 'https://docs.google.com/presentation/d/15iFfwv9UDOEaO597w6DZqMoHMH2q-E2krIiuTGW1l7c/htmlpresent',
+  albumExcludedSlideIds: ['p'], // Seated music photograph removed from the website album.
   workshopsEndpoint: '',
   weeklyWorkshops: [],
   teachers: [
@@ -49,7 +50,23 @@ window.AAA_CONTENT = {
     "highlights": [
       "District-level dance competition winner, 2017; second prize, 2015.",
       "State-level dance competition participant, 2017.",
-      "Background dancer on the Rangastalam dance reality show."
+      "Participated in Rangasthalam dance reality show."
+    ]
+  },
+  {
+    "name": "Sona Kapoor",
+    "subject": "Art & Design",
+    "category": "art",
+    "experience": "20+ years in art education",
+    "photo": "assets/people/sona-kapoor-art-class.png",
+    "groupPhoto": true,
+    "photoAlt": "Art class at Anusha Art Academy, with teachers and children displaying their artwork",
+    "position": "50% 35%",
+    "bio": "An art and design educator with over two decades of teaching experience, Sona combines creativity with a thoughtful approach to learning. Her work spans the Cambridge International Curriculum, printmaking and mixed media, alongside art and craft workshops for different age groups.",
+    "highlights": [
+      "Master of Visual Arts and Masters in Print Making, Gulbarga University; BFA, Sri Venkateshwara College of Fine Arts, Hyderabad.",
+      "Distinction in the Cambridge International Certificate in Teaching and Learning; Art and Design Teacher at Sancta Maria International School since 2018.",
+      "Exhibited at World Art Dubai (2022) and Jehangir Art Gallery, Mumbai (2019)."
     ]
   },
   {

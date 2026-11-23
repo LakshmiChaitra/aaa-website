@@ -8,11 +8,11 @@
   {name:'Western dance',kind:'dance',days:{1:'5–6 p.m.',3:'5–6 p.m.',5:'5:45–7 p.m.'}},
   {name:'Art classes',kind:'art',days:{0:'5–6 p.m.',2:'5–6 p.m.'}},
   {name:'Zumba fitness',kind:'wellbeing',label:'ADULTS',days:{1:'6–7 p.m.',3:'6–7 p.m.',4:'6–7 p.m.'}},
-  {name:'Keyboard classes',kind:'music',days:{0:'6–7 p.m.',1:'6–7 p.m.',2:'6–7 p.m.'}},
+  {name:'Keyboard classes',kind:'music',days:{0:'6–7 p.m.',2:'6–7 p.m.'}},
   {name:'Sankeertanas workshop',kind:'workshop',label:'BASED ON ENROLMENTS',days:{0:'10:30 a.m.–12 noon',1:'10:30 a.m.–12 noon',2:'10:30 a.m.–12 noon',3:'10:30 a.m.–12 noon'}},
   
  ];
- schedule.forEach(item=>{item.days[6]='Sunday workshop · On enrolment';});
+ schedule.forEach(item=>{if(item.name!=='Keyboard classes')item.days[6]='Sunday workshop · On enrolment';});
  const body = document.querySelector('#week-table-body');
  const head = document.querySelector('.week-table thead tr');
  const agenda = document.querySelector('#day-agenda');

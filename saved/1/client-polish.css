@@ -60,3 +60,35 @@
 .contemporary .classes.kids-view .course.course-card .course-card-bottom{font-weight:700;font-size:12px;color:var(--kid-accent);border-top:1px solid #ffffff;margin-top:auto!important}
 @media(max-width:540px){.kids-view .little-intro{padding:25px}.contemporary .classes.kids-view .class-list{gap:22px}.contemporary .classes.kids-view .course.course-card .course-card-title{font-size:28px}}
 @media(prefers-reduced-motion:reduce){.contemporary .classes.kids-view .course.course-card{transition:none}.contemporary .classes.kids-view .course.course-card:hover{transform:none}}
+
+/* Preserve the colours of the client’s high-resolution academy logo. */
+.contemporary .academy-navigation .header .brand img,.contemporary .footer-top .brand img,.contemporary .weekly-logo{filter:none;object-fit:contain}
+
+/* Selected K2 and W3 artwork stays legible at course-card size. */
+.course-card-symbol .practice-illustration{width:230px;max-width:100%;height:170px}
+.kids-view .course-card-symbol .practice-illustration{width:155px;height:145px}
+.has-detail .course-card-symbol .practice-illustration{width:180px;height:135px}
+
+/* The opened dance details reuse the exact artwork selected for their cards. */
+#practice-content .shape-illustrated-dance{--object-ink:#49312f;--object-muted:#65504b;--object-line:#ad8b6255;--object-gold:#835d36;margin:0;padding:0}
+#practice-content .shape-illustrated-dance .sculpture-surface{padding:25px 24px 30px;border-radius:24px;background:#f7efdf;border:1px solid #b18b54;box-shadow:0 8px 24px #52332218}
+#practice-content .practice-detail-art{display:block;width:100%;height:200px;object-fit:contain;margin:0 auto 23px}
+#practice-content .shape-illustrated-dance .practice-enquire{background:#773c4a;color:#fff5df;border-color:#773c4a}
+
+/* Object-shaped detail cards: the text lives inside each silhouette. */
+#practice-content :is(.shape-shield,.shape-pen,.shape-keyboard,.shape-fitness){margin:0;padding:0;max-width:none}
+#practice-content :is(.shape-shield,.shape-pen,.shape-keyboard,.shape-fitness) .sculpture-surface{position:relative;border:0;border-radius:0;background:transparent;box-shadow:none;isolation:isolate;--object-ink:#44372f;--object-muted:#605046;--object-gold:#6e5340;--object-line:#8a735044}
+#practice-content :is(.shape-shield,.shape-pen,.shape-keyboard,.shape-fitness) .sculpture-surface:before{content:'';position:absolute;inset:0;z-index:-1;background-size:100% 100%;background-repeat:no-repeat;pointer-events:none;border:0;border-radius:0}
+#practice-content .shape-shield .sculpture-surface{padding:50px 42px 50px}
+#practice-content .shape-shield .sculpture-surface:before{background-image:url('assets/objects/detail-shield.svg')}
+#practice-content .shape-pen .sculpture-surface{padding:90px 43px 100px}
+#practice-content .shape-pen .sculpture-surface:before{background-image:url('assets/objects/detail-pencil.svg')}
+#practice-content .shape-keyboard .sculpture-surface{padding:80px 38px 155px}
+#practice-content .shape-keyboard .sculpture-surface:before{background-image:url('assets/objects/detail-keyboard.svg')}
+#practice-content .shape-fitness .sculpture-surface{padding:140px 105px 140px;outline:0}
+#practice-content .shape-fitness .sculpture-surface:before{background-image:url('assets/objects/detail-zumba.svg')}
+#practice-content .shape-fitness .sculpture-copy h3{font-size:30px!important}
+#practice-content .shape-fitness{min-width:0}
+#practice-content .shape-fitness .sculpture-description{font-size:11px}
+#practice-content .shape-fitness .practice-enquire{font-size:10px;padding:10px 8px;gap:5px}
+@media(max-width:540px){#practice-content .shape-fitness .sculpture-surface{padding-inline:88px}}

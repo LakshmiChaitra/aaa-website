@@ -227,3 +227,15 @@ body:has(#people-photo-dialog[open]){overflow:hidden}
 .gratitude .guru-groups .guru-dedication li+li::before{content:"";position:absolute;top:0;left:25%;right:25%;height:1px;background:linear-gradient(90deg,transparent,#b99a69,transparent)}
 .gratitude .guru-groups .guru-dedication li small{font:400 13px/1.65 var(--sans);color:#92734c;max-width:275px;margin:9px auto 0;letter-spacing:.1px}
 @media(max-width:700px){.gratitude .guru-groups{gap:26px}.guru-panel-heading{padding:23px 20px 25px}.guru-flower{width:40px;height:40px}.gratitude .guru-groups .guru-dedication ul{min-height:270px;padding:10px 24px 23px}.gratitude .guru-groups .guru-dedication li{font-size:26px;padding-block:22px}.gratitude .guru-panel-heading h3{font-size:35px}}
+
+/* Client-supplied guru photographs, with the complete frame preserved. */
+.contemporary .gratitude .gratitude-intro>.guru-salutation{font:500 clamp(25px,3vw,36px)/1.6 var(--serif);color:#f5db9d;margin:0 auto 18px;text-align:center}
+.guru-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:22px 22px 0;background:#f7efdf;align-items:center}
+.guru-photos img{display:block;width:100%;height:250px;object-fit:contain;background:#e9ddc7;border:1px solid #c5a56b;border-radius:8px}
+@media(max-width:700px){.guru-photos{padding:18px 18px 0;gap:10px}.guru-photos img{height:210px}}
+
+/* The art tutor’s supplied classroom photograph retains the full group. */
+.tutor-track .tutor-portrait.tutor-group-photo{height:auto;aspect-ratio:1280/572;width:100%;max-width:none;border-radius:16px;margin:0;align-self:center}
+.tutor-portrait.tutor-group-photo img{object-fit:contain;object-position:center}
+
+.contemporary .tutor-track .faculty-card.faculty-group-card{grid-template-columns:1fr;gap:28px}

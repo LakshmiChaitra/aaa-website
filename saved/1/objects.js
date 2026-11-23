@@ -1,6 +1,8 @@
+function selectedDanceArtwork(item){return {'Kuchipudi dance':'kuchipudi-k2.png','Western dance':'western-w3.png'}[item.name];}
 function practiceElement(item){
- const kind=item.name.includes('Zumba')?'fitness':({keyboard:'keyboard',shield:'shield',pen:'pen',speech:'speech',mic:'mic',mudra:'mudra',book:'book',movement:'dance',brush:'palette',mat:'mat'}[item.icon]||'mic');
- return `<img class="practice-element" src="assets/elements/${kind}.svg" alt="" width="160" height="180" decoding="async">`;
+ const kind=item.name.includes('Zumba')?'zumba':({keyboard:'keyboard',shield:'shield',pen:'pen',speech:'speech',mic:'mic',mudra:'kuchipudi',book:'book',movement:'western-dance',brush:'palette',mat:'mat'}[item.icon]||'mic');
+ const illustration=selectedDanceArtwork(item);
+ return `<img class="practice-element${illustration?' practice-illustration':''}" src="assets/elements/${illustration||kind+'.svg'}?v=selected-dancers-20261123" alt="" width="160" height="180" decoding="async">`;
 }
 // Workshop information shares the same directory and detail panel as regular classes.
 const workshops=[

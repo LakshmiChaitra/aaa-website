@@ -25,8 +25,8 @@
  function render(filter='all'){
   grid.replaceChildren();dots.replaceChildren();
   for(const person of teachers.filter(p=>filter==='all'||p.category===filter)){
-   const card=document.createElement('article');card.className='faculty-card';if(person.name==='Anusha Suryas')card.classList.add('founder-tutor-card');
-   if(person.photo){const figure=document.createElement('div');figure.className='tutor-portrait';const image=document.createElement('img');image.src=person.photo;image.alt=person.name+' · '+person.subject;image.loading='lazy';image.width=600;image.height=700;image.style.objectPosition=person.position||'center';if(person.zoom){image.style.transform=`scale(${person.zoom})`;image.style.transformOrigin=person.position||'center';}figure.append(image);card.append(figure);}
+   const card=document.createElement('article');card.className='faculty-card';if(person.groupPhoto)card.classList.add('faculty-group-card');if(person.name==='Anusha Suryas')card.classList.add('founder-tutor-card');
+   if(person.photo){const figure=document.createElement('div');figure.className='tutor-portrait'+(person.groupPhoto?' tutor-group-photo':'');const image=document.createElement('img');image.src=person.photo;image.alt=person.photoAlt||person.name+' · '+person.subject;image.loading='lazy';image.width=600;image.height=700;image.style.objectPosition=person.position||'center';if(person.zoom){image.style.transform=`scale(${person.zoom})`;image.style.transformOrigin=person.position||'center';}figure.append(image);card.append(figure);}
    if(person.name==='Anusha Suryas')card.append(text('span','Founder','tutor-founder-ribbon'));
    const copy=document.createElement('div');copy.className='tutor-copy';
    copy.append(text('span',person.subject,'faculty-subject'),text('h3',person.name));
