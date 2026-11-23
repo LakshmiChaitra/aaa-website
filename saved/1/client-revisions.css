@@ -52,7 +52,7 @@
 .quick-contact a[aria-disabled=true]{opacity:.4;cursor:default}
 .upcoming-invitation{position:fixed;right:12px;bottom:17px;width:116px;z-index:19;display:block;filter:drop-shadow(0 4px 5px #0002);transform-origin:bottom center}
 .upcoming-invitation img{display:block;width:100%;height:auto}
-.upcoming-invitation[hidden],body:has(dialog[open]) .upcoming-invitation{display:none}
+.upcoming-invitation[hidden],body:has(dialog:modal) .upcoming-invitation{display:none}
 .upcoming-invitation:hover{transform:translateY(-4px)}
 .upcoming-invitation:focus-visible{outline:2px solid #b78b4e;outline-offset:5px}
 @media(min-width:701px) and (max-width:1050px){.contemporary .manuscript-pair article{padding-inline:12%;min-height:700px}.contemporary .manuscript-pair article>p{font-size:13px}.academy-navigation .header nav{gap:14px}.academy-navigation .header nav a{font-size:9px;letter-spacing:.8px}}

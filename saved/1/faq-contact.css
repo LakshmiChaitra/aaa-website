@@ -12,7 +12,7 @@
 .faq-list details a{display:inline-block;color:#715333;text-decoration:underline;text-underline-offset:4px;font-size:12px;margin-top:15px}
 .faq-list summary:focus-visible,.quick-contact a:focus-visible{outline:2px solid #b78b4e;outline-offset:4px}
 .quick-contact{position:fixed;bottom:22px;right:24px;z-index:20;display:flex;align-items:center;border:1px solid #b99a68;border-radius:40px;background:#2c241bf5;box-shadow:0 6px 24px #160d0725;color:#f9ecd5;overflow:hidden}
-.quick-contact[hidden],body:has(dialog[open]) .quick-contact{display:none}
+.quick-contact[hidden],body:has(dialog:modal) .quick-contact{display:none}
 .quick-contact a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;font:500 12px/1.5 var(--sans);color:inherit}
 .quick-contact a+a{border-left:1px solid #b99a6855}
 .quick-contact a:hover{background:#54412d}
