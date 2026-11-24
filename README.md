@@ -1,7 +1,7 @@
 # Anusha Art Academy
 
 Live website: https://anushaartacademy.web.app/
-Backend and previous website: https://anusha-art-academy.onrender.com/
+Backend: https://anusha-art-academy.onrender.com/ (website requests redirect to Firebase)
 Phone preview: https://anushaartacademy.web.app/phone-preview.html
 
 Render Free deploys the `codex/deploy-academy-render` branch of LakshmiChaitra/aaa-website. Build: `pip install -r requirements.txt`. Start: `gunicorn production_app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 30 --access-logfile -`. Health check: `/healthz`.
@@ -37,3 +37,5 @@ Firebase project: `aaa-website-c9da1`, owned by the academy account. `firebase.j
 Added Sivaji G and Khushbu Sadaria using supplied profiles, with a uniform tutor layout. The introduction uses the supplied YouTube video, full width with the choices below. Upcoming Events reads sanitized text and embedded raster images from the public Doc via `/api/events`, retaining the enquiry link at the end. The music guru tribute uses the approved transparent cutout. Life Inside and other video sources remain pending. Validation: 11 backend tests, JavaScript syntax checks and local browser previews.
 
 Firebase Hosting site: `anushaartacademy`. Deploy with `npx --yes firebase-tools deploy --only hosting --project aaa-website-c9da1 --account anushaartacademy@gmail.com`. The academy-named site uses the existing Render backend and exact CORS origins.
+
+The Render service remains required for `/api/registrations`, `/api/views`, `/api/events` and `/api/album-image`. Public page requests redirect to the Firebase site. `local_demo.py` explicitly enables local static previews. Registration now includes Instagram beneath Get directions. Both supplied YouTube videos are published; additional course demonstrations remain optional.

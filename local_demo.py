@@ -1,5 +1,6 @@
 """Isolated local demo: submissions stay in memory; never contact Google Forms."""
 import production_app as site
+site.app.config['SERVE_LOCAL_PREVIEW'] = True
 
 records = {}
 

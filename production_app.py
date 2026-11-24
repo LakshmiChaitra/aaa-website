@@ -8,7 +8,7 @@ import re
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
-from flask import Flask, abort, jsonify, request, send_from_directory
+from flask import Flask, abort, jsonify, redirect, request, send_from_directory
 from werkzeug.middleware.proxy_fix import ProxyFix
 from event_document import EVENTS_DOCUMENT_URL, parse_events
 
@@ -17,6 +17,7 @@ SITE = ROOT / 'saved' / '1'
 SLIDE_PATH = r'/presentation/(?:u/[0-9]+/)?d/15iFfwv9UDOEaO597w6DZqMoHMH2q-E2krIiuTGW1l7c/viewpage'
 app = Flask(__name__, static_folder=None)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024
+app.config['SERVE_LOCAL_PREVIEW'] = False
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)
 
 
@@ -251,17 +252,21 @@ def album_image():
 
 @app.get('/')
 def home():
+    if not app.config['SERVE_LOCAL_PREVIEW']:
+        return redirect('https://anushaartacademy.web.app/', code=302)
     return send_from_directory(SITE, 'index.html')
 
 
 @app.get('/phone-preview.html')
 def phone_preview():
+    if not app.config['SERVE_LOCAL_PREVIEW']:
+        return redirect('https://anushaartacademy.web.app/phone-preview.html', code=302)
     return send_from_directory(ROOT, 'phone-preview.html')
 
 
 @app.get('/saved/1/')
 def saved_home():
-    return send_from_directory(SITE, 'index.html')
+    return home()
 
 
 @app.get('/saved/1/<path:path>')
@@ -269,4 +274,7 @@ def saved_home():
 def assets(path):
     if path.startswith('api/') or any(part.startswith('.') for part in Path(path).parts):
         abort(404)
+    if not app.config['SERVE_LOCAL_PREVIEW']:
+        from urllib.parse import quote
+        return redirect('https://anushaartacademy.web.app/' + quote(path, safe='/'), code=302)
     return send_from_directory(SITE, path)
