@@ -25,9 +25,8 @@
  function render(filter='all'){
   grid.replaceChildren();dots.replaceChildren();
   for(const person of teachers.filter(p=>filter==='all'||p.category===filter)){
-   const card=document.createElement('article');card.className='faculty-card';if(person.groupPhoto)card.classList.add('faculty-group-card');if(person.name==='Anusha Suryas')card.classList.add('founder-tutor-card');
+   const card=document.createElement('article');card.className='faculty-card';if(person.portraitCrop)card.classList.add('faculty-cropped-portrait');
    if(person.photo){const figure=document.createElement('div');figure.className='tutor-portrait'+(person.groupPhoto?' tutor-group-photo':'');const image=document.createElement('img');image.src=person.photo;image.alt=person.photoAlt||person.name+' · '+person.subject;image.loading='lazy';image.width=600;image.height=700;image.style.objectPosition=person.position||'center';if(person.zoom){image.style.transform=`scale(${person.zoom})`;image.style.transformOrigin=person.position||'center';}figure.append(image);card.append(figure);}
-   if(person.name==='Anusha Suryas')card.append(text('span','Founder','tutor-founder-ribbon'));
    const copy=document.createElement('div');copy.className='tutor-copy';
    copy.append(text('span',person.subject,'faculty-subject'),text('h3',person.name));
    if(person.experience)copy.append(text('span',person.experience,'tutor-experience'));
@@ -40,7 +39,13 @@
   grid.scrollLeft=0;updateControls();
  }
  document.querySelectorAll('[data-tutor-filter]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-tutor-filter]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));render(button.dataset.tutorFilter);}));
- render();
+ const requestedTutor=new URLSearchParams(location.search).get('tutor');
+ const selectedTutor=teachers.find(person=>person.name===requestedTutor);
+ if(selectedTutor){
+  document.querySelectorAll('[data-tutor-filter]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.tutorFilter===selectedTutor.category)));
+  render(selectedTutor.category);
+  requestAnimationFrame(()=>goTo(teachers.filter(person=>person.category===selectedTutor.category).indexOf(selectedTutor)));
+ }else render();
  const dialog=document.querySelector('#people-photo-dialog');let opener=null;
  document.querySelectorAll('[data-people-photo]').forEach(button=>button.addEventListener('click',()=>{opener=button;const image=dialog.querySelector('img');image.src=button.dataset.peoplePhoto;image.alt=button.dataset.caption;dialog.querySelector('p').textContent=button.dataset.caption;dialog.showModal();}));
  dialog.querySelector('button').addEventListener('click',()=>dialog.close());

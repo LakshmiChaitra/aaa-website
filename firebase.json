@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "predeploy": ["python3 build_static.py"],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}]
+      },
+      {
+        "source": "**/*.@(html|js|css)",
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]
+      }
+    ]
+  }
+}

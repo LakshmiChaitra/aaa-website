@@ -92,3 +92,12 @@
 #practice-content .shape-fitness .sculpture-description{font-size:11px}
 #practice-content .shape-fitness .practice-enquire{font-size:10px;padding:10px 8px;gap:5px}
 @media(max-width:540px){#practice-content .shape-fitness .sculpture-surface{padding-inline:88px}}
+
+/* Full-width film screen; video choices always follow below. */
+.contemporary #films .film-theatre{grid-template-columns:minmax(0,1fr);gap:30px}
+.contemporary #films .film-stage{aspect-ratio:16/9;width:100%}
+.contemporary #films .film-playlist{width:100%;min-width:0}
+.contemporary #films .film-playlist #film-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:0 28px}
+.contemporary #films .film-thumb{width:112px;height:63px;aspect-ratio:16/9}
+.contemporary #films .film-note{margin-top:0;padding-top:18px}
+@media(max-width:700px){.contemporary #films .film-theatre{gap:24px}.contemporary #films .film-thumb{width:96px;height:54px}}

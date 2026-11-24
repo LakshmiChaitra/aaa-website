@@ -12,7 +12,8 @@ if parts.scheme != 'https' or not parts.hostname or parts.path or parts.query or
     raise ValueError('ACADEMY_API_BASE must be an HTTPS origin')
 target = ROOT / 'dist'
 shutil.rmtree(target, ignore_errors=True)
-shutil.copytree(ROOT / 'saved' / '1', target)
+shutil.copytree(ROOT / 'saved' / '1', target, ignore=shutil.ignore_patterns(
+    'western-dance.svg', 'sona-kapoor.jpg', 'khushbu-zumba-profile.png'))
 (target / 'hosting-config.js').write_text('window.AAA_API_BASE = ' + json.dumps(base) + ';\n')
 preview = (ROOT / 'phone-preview.html').read_text().replace('/saved/1/', '/')
 (target / 'phone-preview.html').write_text(preview)

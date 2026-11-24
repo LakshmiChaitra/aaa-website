@@ -28,3 +28,9 @@ The reviewed update hides unconfigured videos, suppresses the known Events draft
 Updated the supplied academy logo and guru tribute photographs, added the Telugu salutation and corrected founder/tutor wording. The album is titled AAA Album; Slides page `p` is excluded from website display while new Slides additions remain supported. Kuchipudi and Western Dance use the selected K2/W3 artwork. Keyboard, Handwriting, Martial Arts and Zumba detail panels use object silhouettes with readable text inside. Added Sona Kapoor to the Art tutor category using the supplied CV and classroom group photograph. Keyboard runs Monday and Wednesday only, 6-7 p.m., in the course details, web timetable and downloadable PDF. Registration and its private Sheet integration are unchanged.
 
 Validation: seven backend tests, JavaScript syntax checks, SVG parsing, static build and local visual review. No live learner test submissions were sent for this update.
+
+## Reviewed Firebase release — 24 November 2026
+
+Firebase project: `aaa-website-c9da1`, owned by the academy account. `firebase.json` publishes only `dist/`; `build_static.py` injects the existing Render API origin and excludes unused draft assets. The Render backend needs exact Firebase Hosting origins in `PUBLIC_SITE_ORIGINS` before launch. Firebase Hosting uses the free Spark plan; no Firebase database or paid functions are needed.
+
+Added Sivaji G and Khushbu Sadaria using supplied profiles, with a uniform tutor layout. The introduction uses the supplied YouTube video, full width with the choices below. Upcoming Events reads sanitized text and embedded raster images from the public Doc via `/api/events`, retaining the enquiry link at the end. The music guru tribute uses the approved transparent cutout. Life Inside and other video sources remain pending. Validation: 11 backend tests, JavaScript syntax checks and local browser previews.

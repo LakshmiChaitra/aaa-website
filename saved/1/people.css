@@ -234,8 +234,8 @@ body:has(#people-photo-dialog[open]){overflow:hidden}
 .guru-photos img{display:block;width:100%;height:250px;object-fit:contain;background:#e9ddc7;border:1px solid #c5a56b;border-radius:8px}
 @media(max-width:700px){.guru-photos{padding:18px 18px 0;gap:10px}.guru-photos img{height:210px}}
 
-/* The art tutor’s supplied classroom photograph retains the full group. */
-.tutor-track .tutor-portrait.tutor-group-photo{height:auto;aspect-ratio:1280/572;width:100%;max-width:none;border-radius:16px;margin:0;align-self:center}
-.tutor-portrait.tutor-group-photo img{object-fit:contain;object-position:center}
-
-.contemporary .tutor-track .faculty-card.faculty-group-card{grid-template-columns:1fr;gap:28px}
+/* All tutors share the same portrait frame and profile layout as Roohith. */
+.tutor-track .tutor-portrait.tutor-group-photo img{object-fit:contain;object-position:center}
+.tutor-track .faculty-cropped-portrait .tutor-portrait{background:#080808}
+/* Crop Khushbu's supplied poster to the photograph within the shared frame. */
+.tutor-track .faculty-cropped-portrait .tutor-portrait img{position:absolute;right:0;top:0;width:284.444444%;height:auto;max-width:none;object-fit:fill;object-position:center}

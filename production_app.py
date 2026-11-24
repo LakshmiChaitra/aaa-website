@@ -10,6 +10,7 @@ from urllib.request import Request, urlopen
 
 from flask import Flask, abort, jsonify, request, send_from_directory
 from werkzeug.middleware.proxy_fix import ProxyFix
+from event_document import EVENTS_DOCUMENT_URL, parse_events
 
 ROOT = Path(__file__).resolve().parent
 SITE = ROOT / 'saved' / '1'
@@ -214,6 +215,20 @@ def views():
         return jsonify(views=counter(request.method == 'POST')), 200, {'Cache-Control': 'no-store'}
     except Exception:
         return jsonify(error='View count temporarily unavailable'), 503, {'Cache-Control': 'no-store'}
+
+
+@app.get('/api/events')
+def events_document():
+    try:
+        with urlopen(EVENTS_DOCUMENT_URL, timeout=20) as response:
+            if response.headers.get_content_type() != 'text/html':
+                raise ValueError('Not a document')
+            body = response.read(12 * 1024 * 1024 + 1)
+        if len(body) > 12 * 1024 * 1024:
+            raise ValueError('Document too large')
+        return jsonify(blocks=parse_events(body.decode('utf-8'))), 200, {'Cache-Control': 'no-store'}
+    except Exception:
+        return jsonify(error='Event updates temporarily unavailable'), 502, {'Cache-Control': 'no-store'}
 
 
 @app.get('/api/album-image')

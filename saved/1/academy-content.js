@@ -54,6 +54,35 @@ window.AAA_CONTENT = {
     ]
   },
   {
+    "name": "Sivaji G",
+    "subject": "Electronic Keyboard · Piano & Acoustic Guitar",
+    "category": "music",
+    "experience": "Teaching music since 2015",
+    "photo": "assets/people/sivaji-keyboard.png",
+    "position": "65% 35%",
+    "bio": "Sivaji teaches Electronic Keyboard as his primary instrument, alongside Piano and Acoustic Guitar, guiding students through structured learning and preparation for Trinity College London examinations. His practical, encouraging lessons break musical concepts into clear steps and make room for students’ favourite songs.",
+    "highlights": [
+      "M.Tech in Soil Mechanics, JNTU Kakinada, with an academic background in Civil Engineering.",
+      "Lessons adapted to each learner’s age, ability, interests and pace, with a focus on technique, musical knowledge and performance confidence.",
+      "Encourages creativity and consistent practice so learners can understand, enjoy and express music independently."
+    ]
+  },
+  {
+    "name": "Khushbu Sadaria",
+    "subject": "Zumba · Pilates & Mobility",
+    "category": "dance",
+    "experience": "Certified Zumba & Pilates instructor",
+    "photo": "assets/people/khushbu-zumba-fitness.png",
+    "portraitCrop": true,
+    "photoAlt": "Khushbu Sadaria, Zumba and Pilates instructor",
+    "bio": "Khushbu brings music, movement and encouragement to energetic group fitness classes. Her approach combines Zumba, mat Pilates and mobility work, adapting routines to different fitness levels and helping participants build confidence and enjoy moving together.",
+    "highlights": [
+      "Zumba Basic 1, CIRCL Mobility, Core and Happiness Unlocked certifications; Reebok Pilates Instructor.",
+      "Group fitness experience at Rainbow Fitness Studio Gym and Kidizens School, Kondapur, alongside community and corporate classes.",
+      "A welcoming approach with warm-ups, cool-downs and routines adapted for safe, inclusive participation."
+    ]
+  },
+  {
     "name": "Sona Kapoor",
     "subject": "Art & Design",
     "category": "art",

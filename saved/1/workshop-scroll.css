@@ -41,3 +41,9 @@ body.workshops-open{overflow:hidden}
 .weekly-copy .weekly-presents{font-size:16px;letter-spacing:2.5px;margin:12px 0}
 .weekly-copy h2{font-size:clamp(30px,4vw,42px)}
 @media(max-width:700px){.weekly-copy .weekly-presents{font-size:14px}.weekly-copy h2{font-size:32px}}
+
+.events-document-image{margin:18px 0;width:100%}
+.events-document-image img{display:block;width:100%;height:auto;object-fit:contain;border-radius:6px}
+
+.events-enquiry{margin:28px 0 12px;padding-top:20px;border-top:1px solid #b6976966}
+.events-enquiry a{line-height:1.7;overflow-wrap:anywhere}
