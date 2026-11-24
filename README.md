@@ -1,7 +1,8 @@
 # Anusha Art Academy
 
-Live website: https://anusha-art-academy.onrender.com/
-Phone preview: https://anusha-art-academy.onrender.com/phone-preview.html
+Live website: https://anushaartacademy.web.app/
+Backend and previous website: https://anusha-art-academy.onrender.com/
+Phone preview: https://anushaartacademy.web.app/phone-preview.html
 
 Render Free deploys the `codex/deploy-academy-render` branch of LakshmiChaitra/aaa-website. Build: `pip install -r requirements.txt`. Start: `gunicorn production_app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 30 --access-logfile -`. Health check: `/healthz`.
 
@@ -34,3 +35,5 @@ Validation: seven backend tests, JavaScript syntax checks, SVG parsing, static b
 Firebase project: `aaa-website-c9da1`, owned by the academy account. `firebase.json` publishes only `dist/`; `build_static.py` injects the existing Render API origin and excludes unused draft assets. The Render backend needs exact Firebase Hosting origins in `PUBLIC_SITE_ORIGINS` before launch. Firebase Hosting uses the free Spark plan; no Firebase database or paid functions are needed.
 
 Added Sivaji G and Khushbu Sadaria using supplied profiles, with a uniform tutor layout. The introduction uses the supplied YouTube video, full width with the choices below. Upcoming Events reads sanitized text and embedded raster images from the public Doc via `/api/events`, retaining the enquiry link at the end. The music guru tribute uses the approved transparent cutout. Life Inside and other video sources remain pending. Validation: 11 backend tests, JavaScript syntax checks and local browser previews.
+
+Firebase Hosting site: `anushaartacademy`. Deploy with `npx --yes firebase-tools deploy --only hosting --project aaa-website-c9da1 --account anushaartacademy@gmail.com`. The academy-named site uses the existing Render backend and exact CORS origins.
