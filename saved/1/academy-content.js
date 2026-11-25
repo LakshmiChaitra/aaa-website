@@ -62,7 +62,8 @@ window.AAA_CONTENT = {
     "position": "65% 35%",
     "bio": "Sivaji teaches Electronic Keyboard as his primary instrument, alongside Piano and Acoustic Guitar, guiding students through structured learning and preparation for Trinity College London examinations. His practical, encouraging lessons break musical concepts into clear steps and make room for students’ favourite songs.",
     "highlights": [
-      "M.Tech in Soil Mechanics, JNTU Kakinada, with an academic background in Civil Engineering.",
+      "Teaching Electronic Keyboard since 2015, with Piano and Acoustic Guitar as secondary instruments.",
+      "Prepares students for Trinity College London examinations, developing musical knowledge, technique and performance confidence.",
       "Lessons adapted to each learner’s age, ability, interests and pace, with a focus on technique, musical knowledge and performance confidence.",
       "Encourages creativity and consistent practice so learners can understand, enjoy and express music independently."
     ]
@@ -121,8 +122,10 @@ window.AAA_CONTENT = {
     "zoom": 1.4,
     "bio": "Spoorthi combines mindful movement, breathwork, meditation and relaxation in sessions tailored to different ages and fitness levels. Her experience includes group classes, individual sessions, women’s wellness, children’s yoga and community workshops.",
     "highlights": [
-      "200-hour Yoga Teacher Training and Therapeutic Yoga Teacher Training.",
-      "Training in Fundamentals of Diet & Therapeutic Nutrition."
+      "200-hour Yoga Teacher Training.",
+      "Therapeutic Yoga training.",
+      "Certified, trained nutritionist.",
+      "TTC-certified Meditation Trainer."
     ]
   }
 ]
