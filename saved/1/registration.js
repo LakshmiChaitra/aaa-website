@@ -49,7 +49,7 @@
  select.addEventListener('change',updateModes);
  form.addEventListener('reset',()=>setTimeout(updateModes,0));
  updateModes();
- [['Regular classes', courses], ['Workshops', workshops]].forEach(([label, items]) => {
+ [['Regular classes', courses], ['Workshops', [{name:'Brighter Minds'}, ...workshops]]].forEach(([label, items]) => {
   const group = document.createElement('optgroup'); group.label = label;
   items.forEach(item => { const option = document.createElement('option'); option.value = item.name; option.textContent = item.name; group.append(option); });
   select.append(group);

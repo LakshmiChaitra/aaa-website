@@ -76,7 +76,7 @@ REGISTRATION_COURSES = {
     'Carnatic music', 'Kuchipudi dance', 'Shloka classes', 'Western dance',
     'Art classes', 'Yoga', 'Zumba fitness', 'Keyboard classes',
     'Martial arts & self-defence', 'Handwriting classes', 'Public speaking skills',
-    'Sankeertanas workshop', 'Sunday music workshop', 'Sunday dance workshop',
+    'Brighter Minds', 'Sankeertanas workshop', 'Sunday music workshop', 'Sunday dance workshop',
     'Sunday art workshop',
 }
 

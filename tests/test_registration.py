@@ -77,6 +77,15 @@ class RegistrationTests(unittest.TestCase):
                 self.assertEqual(self.post().status_code, 409)
                 google.assert_called_once()
 
+    def test_brighter_minds_accepts_offline_and_preserves_course_name(self):
+        with patch.object(site, 'redis_command', side_effect=self.redis), patch.object(site, 'urlopen', return_value=BytesIO(b'<div class="vHW8K">Your response has been recorded.</div>')) as google:
+            self.assertEqual(self.post(course='Brighter Minds', learningMode='Online').status_code, 400)
+            google.assert_not_called()
+            self.assertEqual(self.post(course='Brighter Minds', learningMode='Offline').status_code, 200)
+            fields = parse_qs(google.call_args.args[0].data.decode())
+            self.assertEqual(fields['entry.68124289'], ['Brighter Minds'])
+            self.assertIn('Class / workshop: Brighter Minds', fields['entry.2022916799'][0])
+
     def test_store_outage_does_not_send_registration(self):
         with patch.object(site, 'redis_command', side_effect=TimeoutError), patch.object(site, 'urlopen') as google:
             self.assertEqual(self.post().status_code, 503)
