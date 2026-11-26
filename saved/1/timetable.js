@@ -7,7 +7,7 @@
   {name:'Shloka classes',kind:'music',days:{4:'4:30–5:30 p.m.',5:'10:30–11 a.m.'}},
   {name:'Western dance',kind:'dance',days:{1:'5–6 p.m.',3:'5–6 p.m.',5:'5:45–7 p.m.'}},
   {name:'Art classes',kind:'art',days:{0:'5–6 p.m.',2:'5–6 p.m.'}},
-  {name:'Zumba fitness',kind:'wellbeing',label:'ADULTS',days:{1:'6–7 p.m.',3:'6–7 p.m.',4:'6–7 p.m.'}},
+  {name:'Zumba fitness',kind:'wellbeing',label:'ADULTS',days:{1:'6:30–7:30 p.m.',3:'6:30–7:30 p.m.',4:'6:30–7:30 p.m.'}},
   {name:'Keyboard classes',kind:'music',days:{0:'6–7 p.m.',2:'6–7 p.m.'}},
   {name:'Sankeertanas workshop',kind:'workshop',label:'BASED ON ENROLMENTS',days:{0:'10:30 a.m.–12 noon',1:'10:30 a.m.–12 noon',2:'10:30 a.m.–12 noon',3:'10:30 a.m.–12 noon'}},
   
